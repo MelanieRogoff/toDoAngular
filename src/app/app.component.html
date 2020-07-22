@@ -20,4 +20,32 @@
     <div *ngSwitchDefault>This is the default value</div>
 </div>
 
+<h4>*ngFor Example -- the below loops through our object we created in our ts file and displays all of them with the following headers: User ID and User Name.</h4>
+
+<table class="table">
+    <th>User ID</th>
+    <th>User Name</th>
+    <th>Index</th>
+    <th>First</th>
+    <th>Last</th>
+    <th>Even</th>
+    <th>Odd</th>
+
+    <tr *ngFor="let el of user2; index as i; first as f; last as l; even as e; odd as o;">
+        <!-- el is an arbitrary name we use to loop through the array of object -->
+        <td>{{ el.userId }} </td>
+        <td>{{ el.firstName }} </td>  
+        <td>{{ i }} </td>
+        <!-- the i is the index -->
+        <td>{{ f }} </td>
+        <!-- the f checks if the object is the first one in the array -- only returns true for first element in the array -->
+        <td>{{ l }} </td>
+        <!-- the l checks if the object is the last one in the array -- only returns true for last element in the array -->
+        <td>{{ e }}</td>
+         <!-- the e checks if the index of the specific object is even -- only returns true for evens -->
+        <td>{{ o }}</td>
+         <!-- the o checks if the index of the specific object is odd -- only returns true for odds -->
+    </tr>
+</table>
+
 <router-outlet></router-outlet>

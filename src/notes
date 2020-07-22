@@ -205,3 +205,59 @@ Tutorial #7: *ngSwitch
         <div *ngSwitchCase="meetsExpression3Criteria">...</div>
         <div *ngSwitchDefault>...</div>
     </div>
+
+7. Can pass any value type - integer, string, etc
+
+8. Can read the value dynamically
+
+9. REMEMBER TO PUT * BEFORE THE NG
+
+10. For STRING VALUES, put '' inside the ""
+
+-----------------------------------------------------------------------
+Tutorial #8: *ngFor
+---------------------------------------------
+1. Like a for statement
+
+2. Built-in STRUCTURAL directive -- modifies the DOM structure
+
+3. Loops through elements to display array data in the template
+
+4. Ex:
+    <div *ngFor="let el of collection"></div>
+
+5. Can be used with any element, not just <div>
+
+6. Provides local variables in the array data. 
+
+    A. Index -- this gets the CURRENT index of the CURRENT element in the iteration
+        i. Index starts with 0
+        ii. VERY important for whenever we do DOM manipulation
+        ii. Ex: 
+            <div *ngFor = let el of elements; index as i;"></div>
+    
+    B. First -- gives true or false if it's the first element
+        i. Ex:
+            <div *ngFor="let el of elements; index as i; first as f;"></div>
+    
+    C. Last -- gives true or false if it's the last element
+        i. Ex:
+            <div *ngFor="let el of elements; index as i; first as f; last as l;"></div>
+
+    D. Even -- gives true or false if it's an even element
+        i. Ex:
+            <div *ngFor="let el of elements; index as i; first as f; last as l; even as e;"></div>
+
+    E. Odd -- gives true or false if it's an odd element
+        i. Ex:
+            <div *ngFor="let el of elements; index as i; first as f; last as l; odd as o;"></div>
+
+-----------------------------------------------------------------------
+Tutorial #9: *ngStyle
+---------------------------------------------
+1. ATTRIBUTE directive that lets us set a given DOM element (such as a <div> or <li>)'s style properties
+
+2. Can pass dynamic values via variables
+
+3. Ex:
+    <div [ngStyle]="background-color:value">Example</div>
