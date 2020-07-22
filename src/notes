@@ -253,11 +253,21 @@ Tutorial #8: *ngFor
             <div *ngFor="let el of elements; index as i; first as f; last as l; odd as o;"></div>
 
 -----------------------------------------------------------------------
-Tutorial #9: *ngStyle
+Tutorial #9: ngStyle
 ---------------------------------------------
 1. ATTRIBUTE directive that lets us set a given DOM element (such as a <div> or <li>)'s style properties
 
 2. Can pass dynamic values via variables
 
-3. Ex:
-    <div [ngStyle]="background-color:value">Example</div>
+3. Ex (NON DYNAMIC):
+        <div [ngStyle]="{'color': 'red'}">Example</div>
+        ^^passing the CSS property (ex: background-color, color), followed by the value
+   
+   Ex (DYNAMIC):
+        <div [ngStyle]="{'color': colorValue}">Here is an example of ngStyle</div>
+        (we set the colorValue value in the corresponding ts file)
+
+4. We can set 1+ properties via ngStyle
+    Ex: 
+        <div [ngStyle]="{'color': colorValue, 'background-color': bgColorValue }"Example</div>
+        (we set the colorValue and bgColorValue values in the corresponding ts file)

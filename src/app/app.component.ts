@@ -14,6 +14,10 @@ export class AppComponent {
 
   colorName = 'green';
 
+  colorValue = 'purple';
+
+  bgColorValue = '#FF69B4';
+  
   user2 = [
     { 
       userId: 10, 

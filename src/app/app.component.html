@@ -1,15 +1,13 @@
-<h1 class="bg-primary">Welcome to {{title}}!</h1>
+<h1 class="bg-primary">Welcome to {{title}} Notes!</h1>
 
-<app-tasks></app-tasks>
-
-<h4>Look at my work!</h4>
-
-<button (click)="readMe()">Click me pls</button>
+<button (click)="readMe()">Click here to console.log()</button>
+<br>-----------------------------------------------<br>
 
 <div *ngIf="showMsg; then showThenMsg; else showElseMsg"></div>
 <ng-template #showElseMsg>You have entered the else message zone!</ng-template>
 <ng-template #showThenMsg>You have entered the then message zone!</ng-template>
 
+<br>-----------------------------------------------<br>
 <h4>Switch Example</h4>
 
 <div [ngSwitch]="switchValue">
@@ -20,32 +18,33 @@
     <div *ngSwitchDefault>This is the default value</div>
 </div>
 
-<h4>*ngFor Example -- the below loops through our object we created in our ts file and displays all of them with the following headers: User ID and User Name.</h4>
+<br>-----------------------------------------------<br>
+<h4>*ngFor Example -- the below loops through our object we created in our ts file and displays all of them with the headers we provided.</h4>
 
 <table class="table">
     <th>User ID</th>
     <th>User Name</th>
-    <th>Index</th>
-    <th>First</th>
-    <th>Last</th>
-    <th>Even</th>
-    <th>Odd</th>
+    <th>Index - we will use i as a variable below to represent this</th>
+    <th>First - we will use f as a variable below to represent this</th>
+    <th>Last - we will use l as a variable below to represent this</th>
+    <th>Even - we will use e as a variable below to represent this</th>
+    <th>Odd - we will use o as a variable below to represent this</th>
 
     <tr *ngFor="let el of user2; index as i; first as f; last as l; even as e; odd as o;">
         <!-- el is an arbitrary name we use to loop through the array of object -->
         <td>{{ el.userId }} </td>
         <td>{{ el.firstName }} </td>  
         <td>{{ i }} </td>
-        <!-- the i is the index -->
-        <td>{{ f }} </td>
-        <!-- the f checks if the object is the first one in the array -- only returns true for first element in the array -->
-        <td>{{ l }} </td>
-        <!-- the l checks if the object is the last one in the array -- only returns true for last element in the array -->
-        <td>{{ e }}</td>
-         <!-- the e checks if the index of the specific object is even -- only returns true for evens -->
-        <td>{{ o }}</td>
-         <!-- the o checks if the index of the specific object is odd -- only returns true for odds -->
+        <td>{{ f }} </td> <!-- f checks if object=first in the array -- only returns true for first element -->
+        <td>{{ l }} </td><!-- l checks if object=last in the array -- only returns true for last element -->
+        <td>{{ e }}</td> <!-- e checks if index of the specific object=even -- only returns true for evens -->
+        <td>{{ o }}</td> <!-- o checks if the index of the specific object=odd -- only returns true for odds-->
     </tr>
 </table>
+
+<h4>ngStyle Example</h4>
+<div [ngStyle]="{'color': colorValue, 'background-color': bgColorValue }">Here is an example of ngStyle</div>
+<a [ngStyle]="{'color': colorValue, 'background-color': bgColorValue }" href='#'>Empty Link</a>
+
 
 <router-outlet></router-outlet>
