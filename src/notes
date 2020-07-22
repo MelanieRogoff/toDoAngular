@@ -1,0 +1,176 @@
+Tutorial Notes: 
+
+Tutorial #1: Folder Structure
+---------------------------------------------
+
+**CAN RESET PORT BY DOING ng serve --port=4300**
+
+1.e2e:
+    -where our end-to-end test scripts live. 
+    -has protractor.conf.js - Protractor framework runs end to end tests
+    -app.po.ts = Protractor file that'll have "po" file (po is how we know it's Protractor file)
+    -app.e2e-spec.ts file:
+        -e2e tells the script that it's end to end test script
+        -spec means it's a test file
+
+2. node_modules:
+    -ng new appNameHere makes a new node_modules
+    -folder where all modules/libraries live
+    - use: npm i nameHere to install a library. Ex: npm i bootstrap
+    - DON'T TOUCH THIS FOLDER FOR DEVELOPMENT PURPOSES. 
+
+3. src (most critical):
+    -where our app resides
+    - Basic Structure:
+        a. app folder (where we see components, modules, services, directives, pipes)
+            i. app.component.ts, app.component.html, etc
+            ii. app.component.spec.ts file [means it's a UNIT TEST script/file, NOT end to end]
+        b. assets
+            -styles
+            -icons
+            -images
+        c. environments (configure variables or pipelines for dev, staging, test, prod)
+
+        d. polyfills - if user browser is outdated, polyfills will add the functionality to it to make it backwards compatible
+
+        e. main.ts - boots up the application
+
+        f. styles.css - global stylesheet. Use limited things such as fonts/typography. Have specific styling in respective component css files
+
+4. test.ts - test script for booting process. All the code for main.ts is tested HERE.
+
+5. angular.json - has the configuration for our entire project 
+        
+6. karma.conf.js - runs unit test scripts
+
+7. tsconfig.json - build & compilation related to our angular app
+
+8. tslint.json - linting/coding standards we can set
+
+9. package.json
+    -can customize the scripts and add new scripts
+    - GO HERE 1ST TO UNDERSTAND ANY ANGULAR PROJECT YOU JOIN/EXISTING APPLICATION
+
+10. package-lock.json
+    -contains everything needed to run in prod mode - CRITICAL TO HAVE
+    -resolves all required sub modules
+
+**bootstrapModule loads and initializes browser application**
+
+**use ng test to run Jasmine unit tests**
+
+**use ng e2e to run all our end to end tests**
+
+**use ng update if you run on any version less than current/desired version**
+
+**use ng build to build/generate the output of our app. It's compiled JS code**
+
+**use ng lint to see what code passes the syntax linting. Can set coding standards & rules**
+
+-----------------------------------------------------------------------
+Tutorial #2: Modules
+---------------------------------------------
+1. Contains multiple components, can contain services, directives, pipes related to a particular functionality -- basically a logical grouping
+
+2. In modules (ex: AppModule), we do the following:
+
+    -declarations: enter components we're using here, as well as pipes
+    -imports: enter modules we're going to use here
+    -providers: enter any services we use here
+    -bootstrap: tells angular which component to start with
+
+3. Make a new module by doing: ng generate module todo, for example. 
+    -MUST import it into AppModule
+
+-----------------------------------------------------------------------
+Tutorial #3: Decorators
+---------------------------------------------
+1. TS feature used for passing metadata
+
+2. Functions that return functions; invoked @ run time
+
+3. Types of Decorators:
+    A. Class Decorators: @NgModule, @Component
+    B. Property Decorators: @Input, @output -- ex: @Input() data: string;
+    C. Method/Event Decorators: @HostListener
+    D. Parameter Decorators: @Inject
+
+4. Start with @ symbol
+
+-----------------------------------------------------------------------
+Tutorial #4: Components
+---------------------------------------------
+1. Basically little pieces that can be reused throughout the app in multiple places.
+
+2. Smaller feature/functionality inside of a bigger functionality
+
+3. Tree Hierarchy:
+         Parent
+    Child1, Child2, Child3
+
+4. <app-root> = 1st component that gets loaded. You see this in app.component.html
+
+5. AppComponent = MOST IMPORTANT COMPONENT. Its selector is <app-root>
+
+6. Each component will have 3 important things:
+    -selector
+    -templateUrl or template
+    -stylesUrl
+
+7. To make a component, do: ng g c componentName. It'll add the component name automatically to our AppModule for us
+
+8. Where you generate the component is CRITICAL bc the parent module will be updated accordingly with the new component
+
+9. We can have components inside of components (sub components). We do this by taking the selector name and putting it in a component html file as an element. 
+    -Ex: we put our <app-tasks> inside of AppComponent by putting, in app.component.html: <app-tasks></app-tasks>
+
+10. We can import our components by importing the corresponding module into AppModule.
+
+11. Need to do export: [ComponentHere] in order to use it when importing a module that corresponds to it
+
+-----------------------------------------------------------------------
+Tutorial #5: Directives (like a class)
+---------------------------------------------
+1. 3 Types of Directives:
+
+    A. Component 
+        -Every app needs at least 1 component
+        - Have their own templates
+        - Events attached
+
+    B. Structural
+        -ALWAYS STARTS WITH *
+        -(*) Symbol
+        -Updates structure of the template/elements of the template
+        -*ngFor, *ngIf, *ngSwitch
+
+    C. Attribute 
+        -Changes the styling property
+        -ngStyle, ngClass 
+            -Ex: [ngStyle]='{color: colorName}' <-- Define the colorName in the ts file
+
+2. ngIf is if/else (can show/hide using this)
+
+3. ngSwitch is switch case
+
+4. To make a directive, do: ng generate directive directiveName
+
+
+-----------------------------------------------------------------------
+Tutorial #6: *ngIf
+---------------------------------------------
+1. Built-in STRUCTURAL Directive that can add/remove elements
+
+2. Resolves to true or false (is boolean)
+
+3. Example:
+    <div *ngIf="condition"></div>
+
+4. Else statement in *ngIf will show the block based on the false condition
+
+5. **FOR USING ELSE, USE <ng-template> & PASS A TEMPLATE REFERENCE VARIABLE W/It
+    Ex: 
+        <div *ngIf="showValue; else showMessage">Show Message</div>
+        <ng-template #showMessage>Show the else message</ng-template>
+
+6. CANNOT DEFINE THE TEMPLATE REFERENCE VARIABLE W/ANYTHING OTHER THAN NG-TEMPLATE
