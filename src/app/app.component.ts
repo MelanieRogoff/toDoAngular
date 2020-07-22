@@ -8,9 +8,22 @@ import { Component, Input, Output } from '@angular/core';
 export class AppComponent {
   title = 'toDoAngular';
 
-  showMsg = true;
+  showMsg = false;
+
+  switchValue = 'three';
 
   colorName = 'green';
+
+  users = [
+    { 
+      id: 1, 
+      'name': 'John'
+    }, 
+    {
+      id: 2, 
+      'name': 'Jack'
+    }
+  ]
 
   readMe() {
     console.log('hi');

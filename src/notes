@@ -155,7 +155,6 @@ Tutorial #5: Directives (like a class)
 
 4. To make a directive, do: ng generate directive directiveName
 
-
 -----------------------------------------------------------------------
 Tutorial #6: *ngIf
 ---------------------------------------------
@@ -174,3 +173,35 @@ Tutorial #6: *ngIf
         <ng-template #showMessage>Show the else message</ng-template>
 
 6. CANNOT DEFINE THE TEMPLATE REFERENCE VARIABLE W/ANYTHING OTHER THAN NG-TEMPLATE
+
+7. *ngIf with Then AND Else statement
+    -When condition is true, use the template variable reference, and THEN block will be exectued
+    -When condition is false, use the template variable reference, and ELSE block will be exectued
+    -Ex:
+        <div *ngIf="showValue then thenBlock; else showMsg">Show value</div>
+        <ng-template #thenBlock>Showing THEN Message</ng-template>
+        <ng-template #elseBlock>Showing ELSE Message</ng-template>
+
+-----------------------------------------------------------------------
+Tutorial #7: *ngSwitch
+---------------------------------------------
+1. Built-in STRUCTURAL Directive that can add/remove elements
+
+2. Allows element to be shown/hidden based on a condition
+
+3. Can take MULTIPLE value params for a condition check
+
+4. We also define a default action
+
+5. 3 Important Elements of *ngSwitch:
+    A. *ngSwitch
+    B. *ngSwitchCase
+    C. *ngSwitchDefault
+
+6. Ex: 
+    <div [ngSwitch]="switchExpressionHere>
+        <div *ngSwitchCase="meetsExpression1Criteria">...</div>
+        <div *ngSwitchCase="meetsExpression2Criteria">...</div>
+        <div *ngSwitchCase="meetsExpression3Criteria">...</div>
+        <div *ngSwitchDefault>...</div>
+    </div>

@@ -6,6 +6,18 @@
 
 <button (click)="readMe()">Click me pls</button>
 
-<div *ngIf="showMsg">This is an if statement</div>
+<div *ngIf="showMsg; then showThenMsg; else showElseMsg"></div>
+<ng-template #showElseMsg>You have entered the else message zone!</ng-template>
+<ng-template #showThenMsg>You have entered the then message zone!</ng-template>
+
+<h4>Switch Example</h4>
+
+<div [ngSwitch]="switchValue">
+    <div *ngSwitchCase="1">Value passed is : 1</div>
+    <div *ngSwitchCase="2">Value passed is : 2</div>
+    <div *ngSwitchCase="3">Value passed is : 3</div>
+    <div *ngSwitchCase="'three'">Value passed is : 4</div>
+    <div *ngSwitchDefault>This is the default value</div>
+</div>
 
 <router-outlet></router-outlet>
