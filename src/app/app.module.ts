@@ -14,6 +14,8 @@ import { NgForTutorialComponent } from './ng-for-tutorial/ng-for-tutorial.compon
 import { SwitchCaseTutorialComponent } from './switch-case-tutorial/switch-case-tutorial.component';
 import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
 import { FormsModule } from '@angular/forms';
+import { PipesTutorialComponent } from './pipes-tutorial/pipes-tutorial.component';
+import { NgIfTutorialComponent } from './ng-if-tutorial/ng-if-tutorial.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { FormsModule } from '@angular/forms';
     NgForTutorialComponent,
     SwitchCaseTutorialComponent,
     TwoWayDataBindingComponent,
+    PipesTutorialComponent,
+    NgIfTutorialComponent,
   ],
   imports: [
     AppRoutingModule,

@@ -1,0 +1,28 @@
+<h2>Pipes Example:</h2>
+
+<h6 class="bolder">Lowercase & Uppercase Pipes, Respectively:</h6>
+<div class="larger">
+    {{ user.firstName | lowercase }}, {{ user.lastName | uppercase }}
+</div>
+<br>-----------------------------------------------<br>
+
+<h6 class="bolder">Date Pipe with a timezone:</h6>
+<div class="larger">
+    {{ user.DOB | date: 'MM/dd/YYYY: z' }}
+</div>
+<br>-----------------------------------------------<br>
+
+<h6 class="bolder">Currency Pipe with Euros:</h6>
+
+<div class="larger">
+    {{ user.salary | currency:'EUR' }}
+</div>
+<br>-----------------------------------------------<br>
+
+<h6 class="bolder">Using JSON Pipe so we can see the full user object:</h6>
+
+<div class="larger">
+    {{ user | json }}
+</div>
+
+<br>-----------------------------------------------<br>

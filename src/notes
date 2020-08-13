@@ -407,3 +407,37 @@ Tutorial #16: Two-Way Data Binding (EXAMPLE IN two-way-data-binding component)
     <input [(ngModel)]='data'/>
       
 6. ALL EXAMPLES WILL BE IN THE two-way-data-binding COMPONENT
+
+-----------------------------------------------------------------------
+Tutorial #17: Pipes (EXAMPLES IN pipes-tutorial component)
+---------------------------------------------
+
+1. Pipes are used to TRANSFORM data
+
+2. Pipes take data input and convert/transform that data into a desired format
+
+3. Pipes are written by using the pipe operator, which looks like this: |
+
+4. Can apply pipes to ANY View(Template/HTML), and to ANY data inputs
+
+5. Types of Pipes:
+    A. Built-In Pipes
+        -Lowercase
+        -Uppercase
+        -Currency
+        -Date
+        -JSON
+
+    B. Parameterized Pipes
+        -We can pass 1+ params to pipes (can override values this way)
+
+    C. Chaining Pipes 
+        -We can connect MULTIPLE pipes to a data input
+
+    D. Custom Pipes 
+        -We can create our own custom pipes for various data formatting
+
+-----------------------------------------------------------------------
+Tutorial #18: Built-In Pipes (EXAMPLES IN pipes-tutorial component)
+---------------------------------------------
+

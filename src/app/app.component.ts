@@ -8,8 +8,6 @@ import { Component, Input, Output } from '@angular/core';
 export class AppComponent {
   title = 'toDoAngular';
 
-  showMsg = false;
-
   readMe() {
     console.log('hi');
   }

@@ -1,0 +1,5 @@
+<div *ngIf="showMsg; then showThenMsg; else showElseMsg"></div>
+    <ng-template #showElseMsg>You have entered the else message zone!</ng-template>
+    <ng-template #showThenMsg>You have entered the then message zone!</ng-template>
+
+<br>-----------------------------------------------<br>
