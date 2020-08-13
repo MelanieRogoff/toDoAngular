@@ -1,0 +1,9 @@
+<h2>Two-Way Data Binding Example</h2>
+
+<!-- Usually use two-way data binding with inputs because that is an example of something that we will want to pass data to and from -->
+<input [(ngModel)]="firstName"/>
+
+<button (click)="readFirstName()">Read First Name</button>
+
+<!-- By putting firstName in the div, we allow whatever the user writes to be displayed IN the input box as well as outside of it, as the user is typing  -->
+<div>{{ firstName }}</div>

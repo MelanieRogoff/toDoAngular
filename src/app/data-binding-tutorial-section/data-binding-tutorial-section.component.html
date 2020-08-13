@@ -1,3 +1,47 @@
-<h1 class="bg-primary">Welcome to the Data Binding {{showMsg}} Notes!</h1>
+<h1 class="bg-primary">Welcome to the Data Binding {{subTitle}} Notes!</h1>
+
+<!-- Accessing the object property only -->
+<div>USER ID: {{user.userId}}</div>
+<br>-----------------------------------------------<br>
+
+<!-- PROPERTY BINDING SECTION STARTS HERE -->
+<h2>Property Binding</h2>
+<div [ngStyle]="{color: colorVal}">This is an example of property binding with ngStyle</div>
+
+<p [innerHTML]="subTitle">This sets the innerHTML property (naturally part of the HTML) to the subTitle, which we set to equal Interpolation</p>
+
+<!-- PRO TIP: 'c1' is the string that clsName is set to. -->
+<div [ngClass]="'c1'">Setting the class property via property binding</div>
+
+<br>Setting the placeholder value of the input via property binding: <br>
+
+<input [placeholder]="placeholderVal">
+<br><br>-----------------------------------------------<br>
+
+<!-- ATTRIBUTE BINDING SECTION STARTS HERE -->
+<h2>Attribute Binding</h2>
+
+<a [href]="hrefVal">Attribute Binding Link</a>
+<br>-----------------------------------------------<br>
+
+<!-- To define a new property, use attr. and the new property name, like so: -->
+<a [href]="hrefVal" [attr.updateLink]="updatedLink">Updated Link Attribute (Use Inspect to View)</a>
+
+<!-- We can also add a new data type (for example, data-link), like so: -->
+<br>-----------------------------------------------<br>
+
+<a [href]="hrefVal" [attr.updateLink]="updatedLink" [attr.data-link]="updatedLink">Data-Link (Use Inspect to View)</a>
+<br>-----------------------------------------------<br>
+
+<!-- EVENT BINDING SECTION STARTS HERE -->
+<h2>Event Binding</h2>
+
+<!-- Example of passing a random value into the function -- in the TS, you'll see that id is the name of the param, and here we use the value of 10, which is interpreted as the id -->
+<button (click)="showAlert(10)">Click!</button>
+<br>-----------------------------------------------<br><br>
+
+<h5>Example of console.logging a message upon focusing on the below input box</h5>
+
+<input (focus)="logger()">
 
 <router-outlet></router-outlet>

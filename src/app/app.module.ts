@@ -12,6 +12,8 @@ import { DataBindingTutorialSectionComponent } from './data-binding-tutorial-sec
 import { NgStyleAndNgClassTutorialComponent } from './ng-style-and-ng-class-tutorial/ng-style-and-ng-class-tutorial.component';
 import { NgForTutorialComponent } from './ng-for-tutorial/ng-for-tutorial.component';
 import { SwitchCaseTutorialComponent } from './switch-case-tutorial/switch-case-tutorial.component';
+import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,10 +26,12 @@ import { SwitchCaseTutorialComponent } from './switch-case-tutorial/switch-case-
     NgStyleAndNgClassTutorialComponent,
     NgForTutorialComponent,
     SwitchCaseTutorialComponent,
+    TwoWayDataBindingComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    FormsModule,
     TodoModule
   ],
   providers: [],

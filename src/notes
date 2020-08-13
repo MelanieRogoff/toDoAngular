@@ -330,7 +330,7 @@ Tutorial #11: Data Binding (ALL EXAMPLES WILL BE IN THE data-binding-tutorial-se
 
 
 -----------------------------------------------------------------------
-Tutorial #12: Data Binding (INTERPOLATION ONLY)
+Tutorial #12: One-Way Data Binding (INTERPOLATION ONLY)
 ---------------------------------------------
 
 1. Interpolation allows the user to bind data from COMPONENT TO VIEW/TEMPLATE/HTML
@@ -342,3 +342,68 @@ Tutorial #12: Data Binding (INTERPOLATION ONLY)
 4. Syntax is {{ variableName }}
 
 5. ALL EXAMPLES WILL BE IN THE data-binding-tutorial-section COMPONENT
+
+-----------------------------------------------------------------------
+Tutorial #13: One-Way Data Binding (PROPERTY BINDING ONLY)
+---------------------------------------------
+
+1. Property Binding allows the user to bind properties of elements from COMPONENT TO VIEW(TEMPLATE/HTML)
+
+2. The data flow here is ONE-WAY ONLY (from Component to View)
+
+3. This can be used for all properties, such as innerHTML, src, etc.
+
+4. Syntax is [propertyName]="'expressionHere'"
+
+5. ALL EXAMPLES WILL BE IN THE data-binding-tutorial-section COMPONENT
+
+-----------------------------------------------------------------------
+Tutorial #14: One-Way Data Binding (ATTRIBUTE BINDING ONLY)
+---------------------------------------------
+
+1. Attribute Binding allows the user to bind ATTRIBUTES of elements from COMPONENT TO VIEW(TEMPLATE/HTML)
+
+2. The data flow here is ONE-WAY ONLY (from Component to View)
+
+3. This can be used for ANY EXISTING PROPERTIES OR CUSTOM ATTRIBUTES
+
+4. Syntax for defining Attribute Binding: 
+    [attr.attributeName]="'expressionHere'"
+
+5. ALL EXAMPLES WILL BE IN THE data-binding-tutorial-section COMPONENT
+
+-----------------------------------------------------------------------
+Tutorial #15: One-Way Data Binding (EVENT BINDING ONLY)
+---------------------------------------------
+
+1. Event Binding allows the user to bind EVENTS of elements from COMPONENT TO VIEW(TEMPLATE/HTML)
+
+2. The data flow here is ONE-WAY ONLY (from Component to View)
+
+3. This can be used for ALL AVAILABLE EVENTS
+
+4. Syntax for defining Event Binding: 
+    <button (eventName)="function()"></button>
+  
+5. Some events include: onKeyUp, onHover, onKeyDown, etc
+    
+6. ALL EXAMPLES WILL BE IN THE data-binding-tutorial-section COMPONENT
+
+
+-----------------------------------------------------------------------
+Tutorial #16: Two-Way Data Binding (EXAMPLE IN two-way-data-binding component)
+---------------------------------------------
+
+1. Allows the user to bind EVENTS of elements from COMPONENT TO VIEW(TEMPLATE/HTML)
+
+2. The data flow here is BOTH WAYS (from View to Component & from Component to View)
+
+3. Two-Way Data Binding is a COMBINATION of Property Binding & Event Binding
+
+4. In this type of data binding, we use ngModel  
+    -MUST IMPORT { FormsModule } INTO YOUR app.module.ts IN ORDER TO USE ngModel
+
+5. Syntax:
+    <input [(ngModel)]='data'/>
+      
+6. ALL EXAMPLES WILL BE IN THE two-way-data-binding COMPONENT

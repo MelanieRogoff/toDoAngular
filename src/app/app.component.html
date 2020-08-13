@@ -6,26 +6,25 @@
 <div *ngIf="showMsg; then showThenMsg; else showElseMsg"></div>
 <ng-template #showElseMsg>You have entered the else message zone!</ng-template>
 <ng-template #showThenMsg>You have entered the then message zone!</ng-template>
-
 <br>-----------------------------------------------<br>
 
 <!-- INSERTING THE SWITCH CASE TUTORIAL PRACTICE HERE -->
 <app-switch-case-tutorial></app-switch-case-tutorial>
-
 <br>-----------------------------------------------<br>
 
 <!-- INSERTING THE ngFor TUTORIAL PRACTICE HERE -->
 <app-ng-for-tutorial></app-ng-for-tutorial>
-
 <br>-----------------------------------------------<br>
 
 <!-- INSERTING THE ngStyle & ngClass TUTORIAL PRACTICE HERE -->
 <app-ng-style-and-ng-class-tutorial></app-ng-style-and-ng-class-tutorial>
-
 <br>-----------------------------------------------<br>
 
-<!-- INSERTING THE DATA BINDING TUTORIAL PRACTICE HERE -->
+<!-- INSERTING THE ONE-WAY DATA BINDING TUTORIAL PRACTICE HERE -->
 <app-data-binding-tutorial-section></app-data-binding-tutorial-section>
+<br>-----------------------------------------------<br>
 
+<!-- INSERTING THE TWO-WAY DATA BINDING TUTORIAL PRACTICE HERE -->
+<app-two-way-data-binding></app-two-way-data-binding>
 
 <router-outlet></router-outlet>

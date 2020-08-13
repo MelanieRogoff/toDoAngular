@@ -7,6 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingTutorialSectionComponent  {
 
-  showMsg = false;
+  clsName = 'c1';
+
+  colorVal = 'red';
+
+  epNum = 17;
+
+  hrefVal = 'https://google.com';
+
+  logger() {
+    console.log('Message here');
+  }
+
+  placeholderVal = 'Please enter a value';
+
+  showAlert(id) {
+    alert('ALERT ' + id);
+  }
+
+  subTitle = 'Interpolation';
+
+  updatedLink = 'https://oracle.com';
+
+  user = {
+    userId: 201,
+    userName: 'ABC',
+    status: 'Active'
+  }
 
 }
