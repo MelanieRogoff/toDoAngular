@@ -271,3 +271,74 @@ Tutorial #9: ngStyle
     Ex: 
         <div [ngStyle]="{'color': colorValue, 'background-color': bgColorValue }"Example</div>
         (we set the colorValue and bgColorValue values in the corresponding ts file)
+
+-----------------------------------------------------------------------
+Tutorial #10: ngClass
+---------------------------------------------
+
+1. ATTRIBUTE directive that lets us set the class name for DOM elements. 
+    [ngClass]="" <--example. When passing a string in, use '' within ""
+
+2. Can pass dynamic values via variables    
+    - strings, arrays, objects, component Method
+
+3. Examples:
+    <div [ngClass]="one">First example</div>
+    <div [ngClass]=" { 'one': true, 'two': false } ">Multiple class name example</div>
+
+5. Dynamic example: 
+    <div [ngClass]="variableName">Dynamic</div>
+
+    TO PASS MULTIPLE CLASSES, WE CAN USE AN ARRAY:
+
+    <div [ngClass]="[clsName, clsName2]">Example</div>
+
+6. We can use expressions to evaluate the classes. Example:
+
+    <div [ngClass]=" { 'one': true, 'two': false } "></div>
+
+    By doing the above, we apply the 'one' class if true, else (if it's false), apply the 'two' class.
+
+-----------------------------------------------------------------------
+Tutorial #11: Data Binding (ALL EXAMPLES WILL BE IN THE data-binding-tutorial-section COMPONENT)
+---------------------------------------------
+
+1. Data Binding allows us to BIND the data from the view (Template) to the Controller (Component class) and vice versa
+
+2. Data Binding (interacting with data) defines HOW the data flows & gets updated, based on our business logic (which is returned in our Component class). 
+    --Business Logic is referred to as the Component class (ex: app.component.ts).
+
+3. Every component will have a template (view) & component, so we need data that flows both ways
+
+4. 2 Types of Data Binding:
+
+    A. One-Way Data Binding (one at a time)
+        i. This is Component-to-View
+            -We can accomplish this via:
+                -Interpolation {{ example here }}
+                    -Displays the data from Component to View (HTML file)
+                -Property Binding
+                -Style Binding
+                -Attribute Binding
+        
+        ii. This can also be View-to-Component (from Template/HTML to Component)
+            -We can accomplish this via EVENT Binding (EX: onKeyUp, onKeyDown).
+
+    B. Two-Way Data Binding 
+        i. Data flows from View-to-Component AND from Component-to-View all at once
+            -Use ngModel for this
+
+
+-----------------------------------------------------------------------
+Tutorial #12: Data Binding (INTERPOLATION ONLY)
+---------------------------------------------
+
+1. Interpolation allows the user to bind data from COMPONENT TO VIEW/TEMPLATE/HTML
+
+2. The data flow here is ONE-WAY ONLY (from Component to View)
+
+3. This can be used for number/integers, strings, objects, arrays, and more.
+
+4. Syntax is {{ variableName }}
+
+5. ALL EXAMPLES WILL BE IN THE data-binding-tutorial-section COMPONENT

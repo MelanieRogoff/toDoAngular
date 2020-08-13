@@ -1,0 +1,22 @@
+<h4>*ngFor Example -- the below loops through our object we created in our ts file and displays each one with the headers we provided.</h4>
+
+<table class="table">
+    <th>User ID</th>
+    <th>User Name</th>
+    <th>Index - we will use i as a variable below to represent this</th>
+    <th>First - we will use f as a variable below to represent this</th>
+    <th>Last - we will use l as a variable below to represent this</th>
+    <th>Even - we will use e as a variable below to represent this</th>
+    <th>Odd - we will use o as a variable below to represent this</th>
+
+    <tr *ngFor="let el of user2; index as i; first as f; last as l; even as e; odd as o;">
+        <!-- el is an arbitrary name we use to loop through the array of object -->
+        <td>{{ el.userId }} </td>
+        <td>{{ el.firstName }} </td>  
+        <td>{{ i }} </td>
+        <td>{{ f }} </td> <!-- f checks if object=first in the array -- only returns true for first element -->
+        <td>{{ l }} </td><!-- l checks if object=last in the array -- only returns true for last element -->
+        <td>{{ e }}</td> <!-- e checks if index of the specific object=even -- only returns true for evens -->
+        <td>{{ o }}</td> <!-- o checks if the index of the specific object=odd -- only returns true for odds-->
+    </tr>
+</table>

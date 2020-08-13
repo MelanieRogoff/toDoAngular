@@ -10,57 +10,6 @@ export class AppComponent {
 
   showMsg = false;
 
-  switchValue = 'three';
-
-  colorName = 'green';
-
-  colorValue = 'purple';
-
-  bgColorValue = '#FF69B4';
-  
-  user2 = [
-    { 
-      userId: 10, 
-      'firstName': 'Jenny'
-    },
-    { 
-      userId: 4, 
-      'firstName': 'Johnny'
-    },
-    { 
-      userId: 2, 
-      'firstName': 'Matt'
-    },
-    { 
-      userId: 55, 
-      'firstName': 'Michael'
-    },
-    { 
-      userId: 3, 
-      'firstName': 'Ken'
-    },
-    { 
-      userId: 53, 
-      'firstName': 'Harry'
-    },
-    { 
-      userId: 7, 
-      'firstName': 'Perry'
-    },
-
-  ]
-
-  users = [
-    { 
-      id: 1, 
-      'name': 'John'
-    }, 
-    {
-      id: 2, 
-      'name': 'Jack'
-    }
-  ]
-
   readMe() {
     console.log('hi');
   }

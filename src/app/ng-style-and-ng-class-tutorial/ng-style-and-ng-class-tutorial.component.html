@@ -1,0 +1,11 @@
+<h4>ngStyle Example</h4>
+<div [ngStyle]="{'color': colorValue, 'background-color': bgColorValue }">Here is an example of ngStyle</div>
+<a [ngStyle]="{'color': colorValue, 'background-color': bgColorValue }" href='#'>Empty Link</a>
+
+<br>-----------------------------------------------<br>
+
+<h4>ngClass Example</h4>
+
+<div [ngClass]="'one'">First</div>
+<div [ngClass]="[clsName, clsName2]">Dynamic!</div>
+<div [ngClass]="{ 'one': true, 'two': false }">Using expressions to set classes</div>

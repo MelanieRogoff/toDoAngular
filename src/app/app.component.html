@@ -8,43 +8,24 @@
 <ng-template #showThenMsg>You have entered the then message zone!</ng-template>
 
 <br>-----------------------------------------------<br>
-<h4>Switch Example</h4>
 
-<div [ngSwitch]="switchValue">
-    <div *ngSwitchCase="1">Value passed is : 1</div>
-    <div *ngSwitchCase="2">Value passed is : 2</div>
-    <div *ngSwitchCase="3">Value passed is : 3</div>
-    <div *ngSwitchCase="'three'">Value passed is : 4</div>
-    <div *ngSwitchDefault>This is the default value</div>
-</div>
+<!-- INSERTING THE SWITCH CASE TUTORIAL PRACTICE HERE -->
+<app-switch-case-tutorial></app-switch-case-tutorial>
 
 <br>-----------------------------------------------<br>
-<h4>*ngFor Example -- the below loops through our object we created in our ts file and displays all of them with the headers we provided.</h4>
 
-<table class="table">
-    <th>User ID</th>
-    <th>User Name</th>
-    <th>Index - we will use i as a variable below to represent this</th>
-    <th>First - we will use f as a variable below to represent this</th>
-    <th>Last - we will use l as a variable below to represent this</th>
-    <th>Even - we will use e as a variable below to represent this</th>
-    <th>Odd - we will use o as a variable below to represent this</th>
+<!-- INSERTING THE ngFor TUTORIAL PRACTICE HERE -->
+<app-ng-for-tutorial></app-ng-for-tutorial>
 
-    <tr *ngFor="let el of user2; index as i; first as f; last as l; even as e; odd as o;">
-        <!-- el is an arbitrary name we use to loop through the array of object -->
-        <td>{{ el.userId }} </td>
-        <td>{{ el.firstName }} </td>  
-        <td>{{ i }} </td>
-        <td>{{ f }} </td> <!-- f checks if object=first in the array -- only returns true for first element -->
-        <td>{{ l }} </td><!-- l checks if object=last in the array -- only returns true for last element -->
-        <td>{{ e }}</td> <!-- e checks if index of the specific object=even -- only returns true for evens -->
-        <td>{{ o }}</td> <!-- o checks if the index of the specific object=odd -- only returns true for odds-->
-    </tr>
-</table>
+<br>-----------------------------------------------<br>
 
-<h4>ngStyle Example</h4>
-<div [ngStyle]="{'color': colorValue, 'background-color': bgColorValue }">Here is an example of ngStyle</div>
-<a [ngStyle]="{'color': colorValue, 'background-color': bgColorValue }" href='#'>Empty Link</a>
+<!-- INSERTING THE ngStyle & ngClass TUTORIAL PRACTICE HERE -->
+<app-ng-style-and-ng-class-tutorial></app-ng-style-and-ng-class-tutorial>
+
+<br>-----------------------------------------------<br>
+
+<!-- INSERTING THE DATA BINDING TUTORIAL PRACTICE HERE -->
+<app-data-binding-tutorial-section></app-data-binding-tutorial-section>
 
 
 <router-outlet></router-outlet>
