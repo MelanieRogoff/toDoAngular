@@ -16,21 +16,26 @@ import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-
 import { FormsModule } from '@angular/forms';
 import { PipesTutorialComponent } from './pipes-tutorial/pipes-tutorial.component';
 import { NgIfTutorialComponent } from './ng-if-tutorial/ng-if-tutorial.component';
+import { HighlightPipeTutorialPipe } from './highlight-pipe-tutorial.pipe';
+import { CustomPipeExampleComponent } from './custom-pipe-example/custom-pipe-example.component';
+import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HoverEffectPipe,
-    TasksComponent,
     AuthorizeComponent,
-    LoginComponent,
+    CustomPipeExampleComponent,
     DataBindingTutorialSectionComponent,
-    NgStyleAndNgClassTutorialComponent,
-    NgForTutorialComponent,
-    SwitchCaseTutorialComponent,
-    TwoWayDataBindingComponent,
-    PipesTutorialComponent,
+    HighlightPipeTutorialPipe,
+    HoverEffectPipe,
+    LoginComponent,
     NgIfTutorialComponent,
+    NgForTutorialComponent,
+    NgStyleAndNgClassTutorialComponent,
+    PipesTutorialComponent,
+    SwitchCaseTutorialComponent,
+    TasksComponent,
+    TwoWayDataBindingComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -38,7 +43,12 @@ import { NgIfTutorialComponent } from './ng-if-tutorial/ng-if-tutorial.component
     FormsModule,
     TodoModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: PathLocationStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

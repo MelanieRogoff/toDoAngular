@@ -1,28 +1,42 @@
 <h2>Pipes Example:</h2>
 
 <h6 class="bolder">Lowercase & Uppercase Pipes, Respectively:</h6>
-<div class="larger">
-    {{ user.firstName | lowercase }}, {{ user.lastName | uppercase }}
-</div>
+<div class="larger">{{ user.firstName | lowercase }}, {{ user.lastName | uppercase }}</div>
 <br>-----------------------------------------------<br>
 
-<h6 class="bolder">Date Pipe with a timezone:</h6>
-<div class="larger">
-    {{ user.DOB | date: 'MM/dd/YYYY: z' }}
-</div>
+<h6 class="bolder">Date Pipe with a timezone:</h6> <!-- DATE PIPE W/TIMEZONE -->
+<div class="larger"> {{ user.DOB | date: 'MM/dd/YYYY: z' }}</div>
 <br>-----------------------------------------------<br>
 
-<h6 class="bolder">Currency Pipe with Euros:</h6>
-
-<div class="larger">
-    {{ user.salary | currency:'EUR' }}
-</div>
+<h6 class="bolder">Currency Pipe with Euros:</h6> <!-- CURRENCY PIPE -->
+<div class="larger">{{ user.salary | currency:'EUR' }}</div>
 <br>-----------------------------------------------<br>
 
-<h6 class="bolder">Using JSON Pipe so we can see the full user object:</h6>
+<h6 class="bolder">Using JSON Pipe to display the full object:</h6> <!-- JSON PIPE -->
+<div class="larger"> {{ user | json }}</div>
+<br>-----------------------------------------------<br>
 
-<div class="larger">
-    {{ user | json }}
-</div>
+<h6 class="bolder">Passing 'short' to Date pipe</h6> <!-- PASSING SHORT PARAM TO DATE PIPE -->
+<div class="larger">{{ user2.DOB | date: 'short' }}</div>
+<br>-----------------------------------------------<br>
 
+<h6 class="bolder">Passing 'longDate' to Date pipe</h6> <!-- PASSING LONGDATE PARAM TO DATE PIPE -->
+<div class="larger"> {{ user2.DOB | date: 'longDate' }}</div>
+<br>-----------------------------------------------<br>
+
+<!-- PASSING PARAMS TO CURRENCY PIPE - the INR + code says to display the INR currency code -->
+<h6 class="bolder">Currency Pipe with Params:</h6>
+<div class="larger"> {{ user2.salary | currency:'INR':'code' }}</div>
+<br>-----------------------------------------------<br>
+
+<!-- PASSING PARAMS TO CURRENCY PIPE WITH DIGIT AMOUNT DISPLAYED -->
+<h6 class="bolder">Currency Pipe with Digit Params:</h6>
+<div class="larger"> {{ user2.salary | currency:'EUR':'EUR':'3.0-1' }}</div>
+<!-- The above says 3 digits, minimum of 0, maximum of 1 deecimals. This can lead to rounding the decimals -->
+<br>-----------------------------------------------<br>
+
+
+<!-- PIPE CHAINING EXAMPLE -->
+<h6 class="bolder">Chaining Pipes Example:</h6>
+<div class="larger"> {{ user.DOB | date:'MMMM' | uppercase }}</div>
 <br>-----------------------------------------------<br>

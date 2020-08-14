@@ -1,0 +1,8 @@
+<h2>Custom Pipe Example!</h2>
+<!-- Pass in our custom pipe with the city parameter (the param that we noted in our pipe creation) -->
+<!-- We can loop through our users object and run our custom highlight pipe through the object -->
+<ul>
+    <li *ngFor="let user of users">
+        <div [innerHTML]="user.cityCode | highlightPipeTutorial: user.cityCode"></div>
+    </li>
+</ul>

@@ -438,6 +438,133 @@ Tutorial #17: Pipes (EXAMPLES IN pipes-tutorial component)
         -We can create our own custom pipes for various data formatting
 
 -----------------------------------------------------------------------
-Tutorial #18: Built-In Pipes (EXAMPLES IN pipes-tutorial component)
+Tutorial #18: Parameterized Pipes (EXAMPLES IN pipes-tutorial component)
 ---------------------------------------------
+
+1. Parameterized Pipes are ones that can take a parameter. 
+
+2. We can pass parameters by using :
+
+3. Currency pipe can take the following params:
+    A. Currency symbol
+    B. Currency code
+    C. Currency Digit Variations
+
+4. Date pipe can take the following params:
+    A. 'short' ('M/d/yy, h:mm a', otherwise known as 6/15/15, 9:03AM)
+    B. 'medium' ('MMM d, y, h:mm:ss a', June 15 2015, 9:03:01 AM)
+    C. 'long' ('MMMM d, y, h:mm:ss a z', June 15 2015 at 9:03:01 AM GMT+1)
+    D. 'full' ('EEEE, MMMM d, y, h:mm:ss a z', Monday, June 15, 2015 at 9:03:01 AM GMT+01:00)
+    F. 'shortDate' ('M/d/yy', 6/15/15)
+    G. 'mediumDate' ('MMMM d, y', June 15, 2015)
+    H. 'longDate' ('MMMM d, y', June 15, 2015)
+    I. 'shortTime' ('h:mm a', 9:03 AM)
+    J. 'mediumTime' ('h:mm:ss a', 9:03:01 AM)
+    K. 'longTime' ('h:mm:ss a z', 9:03:01 AM GMT+1)
+    L. 'fullTime' ('h:mm:ss a zzzz', 9:03:01AM GMT+01:00)
+
+-----------------------------------------------------------------------
+Tutorial #19: Chaining Pipes (EXAMPLES IN pipes-tutorial component)
+---------------------------------------------
+
+1. Chaining Pipes is simply the act of using multiple pipes on a data input.
+
+2. We can pass 1+ pipes to a data input (usually chain 2-3 pipes max). 
+    - Ex: {{ dataInputName | date | uppercase }}
+        --In the above, the date pipe gets applied FIRST, then uppercase. 
+        --The pipes run left-to-right.
+
+-----------------------------------------------------------------------
+Tutorial #20: Custom Pipes (EXAMPLES IN highlight-pipe-tutorial PIPE FILES & custom-pipe-example component)
+---------------------------------------------
+
+1. Generate via CLI by running:
+    ng generate pipe pipeName
+
+2. Pipes MUST be added to the module, which the CLI does automatically
+
+3. We need to manually import Pipe and PipeTransform from '@angular/core'
+
+4. Pipes are declared with the @pipe decorator and provide the selector name.
+
+-----------------------------------------------------------------------
+Tutorial #21: Routing
+---------------------------------------------
+
+1. Router Module has everything needed for designing, developing, and implementing routes/navigation links
+
+2. There can only be ONE instance of the router in our Angular app
+
+3. Router module is found in '@angular/router'.
+
+4. Must set up the Router array - every time a request is made, the router will search in the list of the array and find the most relevant match. 
+
+5. Router has states, which helps us get info about the current state & data related to routes
+
+6. Router can handle & configure these types of routes:
+    -Routes for components
+    -Getting Query Params from routes
+    -Getting URL segments
+    -Loading child routes for a module
+    -Lazy Loading
+    -Handling wild card routes
+    -Handling default routes
+    -Handling 404 routes
+
+7. We navigate FROM ONE COMPONENT VIEW TO ANOTHER via routes
+
+8. Example of Routes array:
+    const routes: Routes = [
+        { path: '', redirectTo: 'enroll', pathMatch: 'full' },
+        { path: '*', redirectTo: 'enroll', pathMatch: 'full'},
+    ];
+
+-----------------------------------------------------------------------
+Tutorial #22: Routing Plan & Routing Strategy
+---------------------------------------------
+
+1. Before we implement our routes, we plan the Routing Strategy, which determines the entire app flow & navigation.
+    -Example:
+        /products
+        /product/10
+        /product/10/details
+        /product?search=param1
+        /home
+        /dashboard
+        /search?keywords=k1 <-- query
+
+2. 2 Types of Routing Strategies:
+    A. PathLocationStrategy
+    B. HashLocationStrategy
+
+        --We would add these in the Providers of our Module, like this:
+            { 
+                provide: LocationStrategy, 
+                useClass: HashLocationStrategy
+            }
+    
+3. BY DEFAULT, Angular uses PathLocationStrategy (/products, /home).
+
+4. With HashLocationStrategy, we see the # in the URL (/#/products, /#/products/10, /#/home).
+
+-----------------------------------------------------------------------
+Tutorial #23: Routing - Base HREF
+---------------------------------------------
+
+1. Every Angular app has a MANDATORY base HREF
+
+2. Angular apps are SPA (Single Page Architecture), meaning there will be only ONE HTML FILES
+
+3. Default base HREF is set to '/', which is the ROOT folder
+
+4. The base HREF is present in index.html for ALL Angular apps
+
+    -This is in the index.html:
+          <base href="/">
+
+5. When we run 'ng build', Angular assumes that we are deploying to the root folder
+
+6. We configure it by doing: 
+
+    ng build --base-href="/basePathName/"
 

@@ -14,4 +14,12 @@ export class PipesTutorialComponent {
     DOB: '10/10/1010',
     salary: 123000
   };
+
+  user2 = {
+    userId: 20,
+    firstName: 'Second',
+    lastName: 'Name',
+    DOB: '10/01/1010',
+    salary: 12.45
+  };
 }
