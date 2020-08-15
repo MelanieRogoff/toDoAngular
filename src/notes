@@ -69,7 +69,7 @@ Tutorial #1: Folder Structure
 
 -----------------------------------------------------------------------
 Tutorial #2: Modules
----------------------------------------------
+-----------------------------------------------------------------------
 1. Contains multiple components, can contain services, directives, pipes related to a particular functionality -- basically a logical grouping
 
 2. In modules (ex: AppModule), we do the following:
@@ -84,7 +84,7 @@ Tutorial #2: Modules
 
 -----------------------------------------------------------------------
 Tutorial #3: Decorators
----------------------------------------------
+-----------------------------------------------------------------------
 1. TS feature used for passing metadata
 
 2. Functions that return functions; invoked @ run time
@@ -99,7 +99,7 @@ Tutorial #3: Decorators
 
 -----------------------------------------------------------------------
 Tutorial #4: Components
----------------------------------------------
+-----------------------------------------------------------------------
 1. Basically little pieces that can be reused throughout the app in multiple places.
 
 2. Smaller feature/functionality inside of a bigger functionality
@@ -130,7 +130,7 @@ Tutorial #4: Components
 
 -----------------------------------------------------------------------
 Tutorial #5: Directives (like a class)
----------------------------------------------
+-----------------------------------------------------------------------
 1. 3 Types of Directives:
 
     A. Component 
@@ -157,7 +157,7 @@ Tutorial #5: Directives (like a class)
 
 -----------------------------------------------------------------------
 Tutorial #6: *ngIf
----------------------------------------------
+-----------------------------------------------------------------------
 1. Built-in STRUCTURAL Directive that can add/remove elements
 
 2. Resolves to true or false (is boolean)
@@ -184,7 +184,7 @@ Tutorial #6: *ngIf
 
 -----------------------------------------------------------------------
 Tutorial #7: *ngSwitch
----------------------------------------------
+-----------------------------------------------------------------------
 1. Built-in STRUCTURAL Directive that can add/remove elements
 
 2. Allows element to be shown/hidden based on a condition
@@ -216,7 +216,7 @@ Tutorial #7: *ngSwitch
 
 -----------------------------------------------------------------------
 Tutorial #8: *ngFor
----------------------------------------------
+-----------------------------------------------------------------------
 1. Like a for statement
 
 2. Built-in STRUCTURAL directive -- modifies the DOM structure
@@ -254,7 +254,7 @@ Tutorial #8: *ngFor
 
 -----------------------------------------------------------------------
 Tutorial #9: ngStyle
----------------------------------------------
+-----------------------------------------------------------------------
 1. ATTRIBUTE directive that lets us set a given DOM element (such as a <div> or <li>)'s style properties
 
 2. Can pass dynamic values via variables
@@ -274,7 +274,7 @@ Tutorial #9: ngStyle
 
 -----------------------------------------------------------------------
 Tutorial #10: ngClass
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. ATTRIBUTE directive that lets us set the class name for DOM elements. 
     [ngClass]="" <--example. When passing a string in, use '' within ""
@@ -301,7 +301,7 @@ Tutorial #10: ngClass
 
 -----------------------------------------------------------------------
 Tutorial #11: Data Binding (ALL EXAMPLES WILL BE IN THE data-binding-tutorial-section COMPONENT)
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Data Binding allows us to BIND the data from the view (Template) to the Controller (Component class) and vice versa
 
@@ -328,10 +328,9 @@ Tutorial #11: Data Binding (ALL EXAMPLES WILL BE IN THE data-binding-tutorial-se
         i. Data flows from View-to-Component AND from Component-to-View all at once
             -Use ngModel for this
 
-
 -----------------------------------------------------------------------
 Tutorial #12: One-Way Data Binding (INTERPOLATION ONLY)
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Interpolation allows the user to bind data from COMPONENT TO VIEW/TEMPLATE/HTML
 
@@ -345,7 +344,7 @@ Tutorial #12: One-Way Data Binding (INTERPOLATION ONLY)
 
 -----------------------------------------------------------------------
 Tutorial #13: One-Way Data Binding (PROPERTY BINDING ONLY)
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Property Binding allows the user to bind properties of elements from COMPONENT TO VIEW(TEMPLATE/HTML)
 
@@ -359,7 +358,7 @@ Tutorial #13: One-Way Data Binding (PROPERTY BINDING ONLY)
 
 -----------------------------------------------------------------------
 Tutorial #14: One-Way Data Binding (ATTRIBUTE BINDING ONLY)
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Attribute Binding allows the user to bind ATTRIBUTES of elements from COMPONENT TO VIEW(TEMPLATE/HTML)
 
@@ -374,7 +373,7 @@ Tutorial #14: One-Way Data Binding (ATTRIBUTE BINDING ONLY)
 
 -----------------------------------------------------------------------
 Tutorial #15: One-Way Data Binding (EVENT BINDING ONLY)
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Event Binding allows the user to bind EVENTS of elements from COMPONENT TO VIEW(TEMPLATE/HTML)
 
@@ -389,10 +388,9 @@ Tutorial #15: One-Way Data Binding (EVENT BINDING ONLY)
     
 6. ALL EXAMPLES WILL BE IN THE data-binding-tutorial-section COMPONENT
 
-
 -----------------------------------------------------------------------
 Tutorial #16: Two-Way Data Binding (EXAMPLE IN two-way-data-binding component)
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Allows the user to bind EVENTS of elements from COMPONENT TO VIEW(TEMPLATE/HTML)
 
@@ -410,7 +408,7 @@ Tutorial #16: Two-Way Data Binding (EXAMPLE IN two-way-data-binding component)
 
 -----------------------------------------------------------------------
 Tutorial #17: Pipes (EXAMPLES IN pipes-tutorial component)
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Pipes are used to TRANSFORM data
 
@@ -439,7 +437,7 @@ Tutorial #17: Pipes (EXAMPLES IN pipes-tutorial component)
 
 -----------------------------------------------------------------------
 Tutorial #18: Parameterized Pipes (EXAMPLES IN pipes-tutorial component)
----------------------------------------------
+-------------------------------------------------------------------------
 
 1. Parameterized Pipes are ones that can take a parameter. 
 
@@ -465,7 +463,7 @@ Tutorial #18: Parameterized Pipes (EXAMPLES IN pipes-tutorial component)
 
 -----------------------------------------------------------------------
 Tutorial #19: Chaining Pipes (EXAMPLES IN pipes-tutorial component)
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Chaining Pipes is simply the act of using multiple pipes on a data input.
 
@@ -476,7 +474,7 @@ Tutorial #19: Chaining Pipes (EXAMPLES IN pipes-tutorial component)
 
 -----------------------------------------------------------------------
 Tutorial #20: Custom Pipes (EXAMPLES IN highlight-pipe-tutorial PIPE FILES & custom-pipe-example component)
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Generate via CLI by running:
     ng generate pipe pipeName
@@ -489,7 +487,7 @@ Tutorial #20: Custom Pipes (EXAMPLES IN highlight-pipe-tutorial PIPE FILES & cus
 
 -----------------------------------------------------------------------
 Tutorial #21: Routing
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Router Module has everything needed for designing, developing, and implementing routes/navigation links
 
@@ -521,7 +519,7 @@ Tutorial #21: Routing
 
 -----------------------------------------------------------------------
 Tutorial #22: Routing Plan & Routing Strategy
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Before we implement our routes, we plan the Routing Strategy, which determines the entire app flow & navigation.
     -Example:
@@ -549,7 +547,7 @@ Tutorial #22: Routing Plan & Routing Strategy
 
 -----------------------------------------------------------------------
 Tutorial #23: Routing - Base HREF
----------------------------------------------
+-----------------------------------------------------------------------
 
 1. Every Angular app has a MANDATORY base HREF
 
@@ -568,3 +566,260 @@ Tutorial #23: Routing - Base HREF
 
     ng build --base-href="/basePathName/"
 
+-----------------------------------------------------------------------
+Tutorial #24: Routing - Router Module
+-----------------------------------------------------------------------
+
+1. Routing Module is the placeholder for configuring all routes & navigations in one module
+
+2. Make sure ALL ROUTES ARE CONFIGURED IN ONE PLACE
+
+3. Generate the app routing module using the CLI by running:
+
+    ng generate module app-routing --flat -module=app
+
+4. The file for the Router Module is: app-routing.module.ts. 
+
+5. Here are the steps outlining what is required in the Router Module file:
+   
+    1. Import NgModule from '@angular/core'
+
+    2. Import { Routes, RouterModule } from '@angular/router'
+
+    3. Create an array of routes
+        -EX:
+            const routes: Routes = [
+                { path: '', redirectTo: 'enroll', pathMatch: 'full' },
+                { path: '*', redirectTo: 'enroll', pathMatch: 'full'},
+            ];
+
+    4. Use the @NgModule decorator to import the RouterModule & export it
+        - EX: 
+            @NgModule({ // RouterModule.forRoot tells Angular to make it available throughout the app
+                imports: [RouterModule.forRoot(routes)],
+                exports: [RouterModule]
+            })
+
+    5. Export the entire class.
+        -EX: 
+            export class AppRoutingModule { }
+
+    6. Import the AppRoutingModule into app.module.ts
+
+-----------------------------------------------------------------------
+Tutorial #25: Routing - Router Outlet
+-----------------------------------------------------------------------
+
+1. Router Outlet is a Directive from Router Module.
+
+2. Every Angular app MUST have Router Outlet.
+
+3. We can have 1+ Router Outlets in our apps
+    -We can specify named Router Outlets in our app
+
+4. Router Outlet lets us define WHERE output should be displayed
+
+5. Router Outlet can be specified at App Module or in individual modules
+
+6. We can see Router Outlet @ bottom of our app.component.html file.
+    - EX: 
+        <router-outlet></router-outlet>
+
+7. PUT A <router-outlet> WHEREVER WE WANT THE OUTPUT TO DISPLAY FOR A ROUTE. 
+
+    -This means it can be in a different HTML file as well. But it's best to just have it in app.component.html
+
+-----------------------------------------------------------------------
+Tutorial #26: Routing - Configuring Routes
+-----------------------------------------------------------------------
+
+1. We can configure routes to redirect routes for various paths, including:
+    A. Path
+    B. Component
+    C. redirectTo
+    D. Children
+
+2. This means adding routes into our Routes array in our app-routing.module.
+
+3. We give the path, then the component that should display. 
+    -EX: 
+        { path: '*', component: DisplayEverythingComponent }
+
+-----------------------------------------------------------------------
+Tutorial #27: Routing - Parameterized Routes
+-----------------------------------------------------------------------
+
+1. We can send parameters to our routes
+
+2. To configure a route with a dynamic value, we would pass a paramter, like so:
+    -EX: 
+        { path: 'product/:id', component: ComponentName }
+    
+    With :id above, if we look up product/10, product/20, etc, it'll work because of the :id
+
+-----------------------------------------------------------------------
+Tutorial #28: Routing - Query Parameters
+-----------------------------------------------------------------------
+
+1. Query params are passed in the URL route (after the '/') like this:
+    EX: 
+        search?keyword=food&country=usa
+
+2. These are usually GET calls.
+
+3. These are visible to the end users, so make sure to NOT put any sensitive information in the query params.
+
+4. We inject ActivatedRoute in the ts file to capture the query params.
+    EX: 
+        If we have a file called search.component.ts, we do the following:
+            constructor(private activatedRoute: ActivatedRoute) { //Inject ActivatedRoute in the constructor
+                this.activatedRoute.queryParams.subscribe(data => {//subscribe to the data from the queryParams in the ActivatedRoute
+                    //INSERT CODE HERE
+                })
+            }
+-----------------------------------------------------------------------
+Tutorial #29: Routing - Redirecting Routes
+-----------------------------------------------------------------------
+
+1. When we want a route to be redirected to another route, we add a redirectTo in our Routes array.
+
+2. Syntax:
+    { path: '', redirectTo: 'home', pathMatch: 'full' }
+
+3. We don't use component: ComponentName, because we are redirecting instead.
+
+4. The empty path in the above example indicates that it's the DEFAULT ROUTE of the app. 
+    -It also requires us to mention that the pathMatch should be 'full'. 
+
+5. path: '' is the default route. MUST ALWAYS HAVE pathMatch: 'full' with default route in order for it to work.
+
+-----------------------------------------------------------------------
+Tutorial #30: Routing - Wildcard Routes
+-----------------------------------------------------------------------
+
+1. Wildcard Routes intercept any invalid URLS in our app.
+
+2. When there are NO MATCHING ROUTES in the Routes array, the router doesn't know where to go. 
+    - This results in errors; to avoid this, do:
+        { path: '**'}
+
+3. Best Practice: Creating a component called PageNotFound and mapping it to the Wildcard RouterModule
+    EX: 
+        { path: '**', component: PageNotFound }
+
+4. BAD IDEA TO HAVE MORE THAN ONE WILDCARD ROUTE!
+
+-----------------------------------------------------------------------
+Tutorial #31: Routing - Child Routes
+-----------------------------------------------------------------------
+
+1. Child Routes let us configure URL segments that are logically related in at least one way. 
+
+2. Syntax involves defining the parent routes first, then the children:
+    -EX: 
+        { path: 'products',
+            children: [
+                { path: 'product-child', component: ProductViewComponent }
+            ]
+        }
+
+3. We can make ANY number of child routes to a parent route
+
+4. Example of different child route names:
+
+    -If we start with 'customers', which is the same as '/customers' (PARENT ROUTE), we can:
+        -Have view (with info, gallery, details), edit, and delete 
+        - These would go UNDER the 'customers' tree, so to speak, and look like this:
+
+            For View: 
+                www.namehere.com/customers/view
+
+                -Info within View:
+                    www.namehere.com/customers/view/info
+
+                -Gallery within View:
+                    www.namehere.com/customers/view/gallery
+
+                -Details within View:
+                    www.namehere.com/customers/view/details
+            
+            For Edit:
+
+            For Delete:
+            
+5. Not the best method, however - create a separate module for Customers in this case
+
+-----------------------------------------------------------------------
+Tutorial #32: Routing - Lazy Loading
+-----------------------------------------------------------------------
+
+1. By default, NgModules are EAGERLY loaded, meaning that all NgModules load as soon as the app loads, even if they're not immediately needed. 
+
+2. When we have a large app with many routes, we use Lazy Loading, which means ONLY loading the NgModules as they are needed. 
+
+3. Lazy Loading keeps initial bundle sizes smaller, and decreases load time. This is a good thing!
+
+4. With Angular 8, loadChildren expects a function that uses the dynamic import syntax in order to import your lazy-loaded module only when it's needed. 
+    EX: 
+      { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) }, //imports from the orders.module and then loads this OrdersModule
+
+5. To create a Lazy Loading Feature Module: 
+    i. Create Feature Module (module SPECIFIC to a certain functionality)
+    ii. Configure loadChildren in appRouting.
+
+6. To load a feature module lazily (or on demand), we load its children using ther loadChildren property in route configuration. 
+
+7. Lazy Loading Creation Syntax:
+    ng g module lazyLoadName --route lazyLoadName --module app.module
+        ^This says to generate a module with the name lazyLoadName
+            Create a Lazy Loading Feature module with the lazyLoadName path 
+                Then update that in the app.module
+    
+8. Every Feature Module has its own child routes. 
+    EX: customer is a Feature Module 
+        -It has the following example children: views, orders, history
+
+9. When we generate the Lazy Loaded module, it is NOT loaded by default. 
+    -We can see this in the Network tab in DevTools
+
+10. We can see the Lazy Loaded module in the Network tab in DevTools IF we go to the specific path the module is tied to
+
+11. WE ONLY LOAD THE LAZY LOADED (FEATURE) MODULE IF WE CALL IT (GO TO THE PATH THAT USES IT).
+
+
+-----------------------------------------------------------------------
+Tutorial #33: Routing - Route Guards
+-----------------------------------------------------------------------
+
+1. Route Guards PREVENT users form navigating to parts of the app that they are not authorized to enter. 
+
+2. Route Guards are used to secure route paths. 
+
+3. Route Guards resolve (give/return) to true or false based on custom logic/functionality
+
+    -Based on the boolean value (true/false), Angular Router decides if the user should access the route or not. 
+
+4. We can make any number of Route Guards. 
+
+5. To create a Route Guard, do:
+    ng generate guard guardName
+
+6. We inject our guard in our module under providers. 
+    EX: 
+
+7. Route Guard Types (Interfaces) Available: 
+    A. CanActivate -- checks to see if a user can visit a route (will activate that component)
+    B. CanActivateChild -- checks to see if a user can visit a route's children
+    C. CanDeactivate -- checks to see if a user can leave a route
+    D. Resolve -- performs route data retrieval BEFORE route activation
+    E. CanLoad -- checks to see if a user can route to a module that is lazily loaded
+
+    THESE ALL RESOLVE TO TRUE OR FALSE BASED ON THE LOGIC/FUNCTIONALITY WE USE.
+
+8. Example of a Route Guard implementation:
+  { path: 'admin', component: AdminHomeComponent, canActivate: [AdminGuardGuard] },
+    ^^ This says that when the path is admin, we'll use AdminHomeComponent.
+       It can ONLY activate based on the info in the AdminGuard we created. 
+       Essentially, whenever AdminGuardGuard resolves to TRUE, let the user access the admin path and display the AdminHomeComponent. 
+       When it's false, DO NOT LET THE USER VIEW THIS DATA. 
+ 

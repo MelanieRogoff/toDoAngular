@@ -19,6 +19,14 @@ import { NgIfTutorialComponent } from './ng-if-tutorial/ng-if-tutorial.component
 import { HighlightPipeTutorialPipe } from './highlight-pipe-tutorial.pipe';
 import { CustomPipeExampleComponent } from './custom-pipe-example/custom-pipe-example.component';
 import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
+import { ProductsTutorialComponent } from './products-tutorial/products-tutorial.component';
+import { ProductViewComponent } from './product-view/product-view.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ProductIdComponent } from './product-id/product-id.component';
+import { OrderViewComponent } from './order-view/order-view.component';
+import { SearchComponent } from './search/search.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +44,14 @@ import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@a
     SwitchCaseTutorialComponent,
     TasksComponent,
     TwoWayDataBindingComponent,
+    ProductsTutorialComponent,
+    ProductViewComponent,
+    ProductEditComponent,
+    ProductIdComponent,
+    OrderViewComponent,
+    SearchComponent,
+    PageNotFoundComponent,
+    AdminHomeComponent,
   ],
   imports: [
     AppRoutingModule,
