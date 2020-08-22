@@ -13,7 +13,7 @@ import { NgStyleAndNgClassTutorialComponent } from './ng-style-and-ng-class-tuto
 import { NgForTutorialComponent } from './ng-for-tutorial/ng-for-tutorial.component';
 import { SwitchCaseTutorialComponent } from './switch-case-tutorial/switch-case-tutorial.component';
 import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipesTutorialComponent } from './pipes-tutorial/pipes-tutorial.component';
 import { NgIfTutorialComponent } from './ng-if-tutorial/ng-if-tutorial.component';
 import { HighlightPipeTutorialPipe } from './highlight-pipe-tutorial.pipe';
@@ -27,6 +27,8 @@ import { OrderViewComponent } from './order-view/order-view.component';
 import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { SigninComponent } from './signin/signin.component';
+import { CheckoutReactiveFormComponent } from './checkout-reactive-form/checkout-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -52,12 +54,15 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     SearchComponent,
     PageNotFoundComponent,
     AdminHomeComponent,
+    SigninComponent,
+    CheckoutReactiveFormComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    TodoModule
+    TodoModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

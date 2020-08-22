@@ -1,0 +1,22 @@
+<h2>Signin With Template-Driven Forms</h2>
+<div class="container">
+    <form #signInForm="ngForm" (ngSubmit)="loginUser(signInForm)">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <!-- Have to set #emailAddress to ngModel in order to use two-way data binding and ensure the error handling works. Also have to put email below so it'll check for a valid email address -->
+          <input type="email" required class="form-control" id="exampleInputEmail1" email aria-describedby="emailHelp" name="emailAddress" ngModel #emailAddress="ngModel" placeholder="Enter email">
+          <small class="form-text text-muted" *ngIf="emailAddress.touched && !emailAddress.valid">Email here</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" required class="form-control" id="exampleInputPassword1" name="pwField" ngModel #pwField="ngModel"placeholder="Password">
+          <small class="form-text text-muted" *ngIf="pwField.touched && !pwField.valid">Password here</small>
+
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="terms" ngModel required id="exampleCheck1">
+          <label class="form-check-label" required for="exampleCheck1">Agree to Terms</label>
+        </div>
+        <button type="submit" [disabled]="!signInForm.valid" class="btn btn-primary">Submit</button>
+      </form>
+</div>

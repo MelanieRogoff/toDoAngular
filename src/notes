@@ -786,7 +786,6 @@ Tutorial #32: Routing - Lazy Loading
 
 11. WE ONLY LOAD THE LAZY LOADED (FEATURE) MODULE IF WE CALL IT (GO TO THE PATH THAT USES IT).
 
-
 -----------------------------------------------------------------------
 Tutorial #33: Routing - Route Guards
 -----------------------------------------------------------------------
@@ -823,3 +822,149 @@ Tutorial #33: Routing - Route Guards
        Essentially, whenever AdminGuardGuard resolves to TRUE, let the user access the admin path and display the AdminHomeComponent. 
        When it's false, DO NOT LET THE USER VIEW THIS DATA. 
  
+ -----------------------------------------------------------------------
+Tutorial #34: Forms
+-----------------------------------------------------------------------
+
+1. There are 2 Types of Forms:
+    A. Template-Driven
+    B. Reactive (Dynamic)
+
+2. We have Two-Way Data Binding, Change Tracking, Validations, Error Handling, and Unit Testing available for Forms.
+
+3. Template-Driven Forms:
+    - Easy to use
+    - Simple/straightforward
+    - All validations & form elements are defined in the template file
+    - Must import FormsModule in app.module.ts
+    - USE IF: 
+        Your forms are simple & straightforward
+        Your forms have FIXED static form fields & elements
+        Your forms have NO COMPLEX VALIDATIONS OR PATTERN MATCHING
+    
+    -EX: Contact Form
+
+4. Reactive (Dynamic) Forms:
+    -All form elements, user interactions, and validations are handled in the component class
+    - Can use formGroup & formControl
+    - Can control better data binding
+    - Can define custom regular expression patterns of error handling
+    - Must import ReactiveFormsModule into app.module.ts
+    - Allows users to define & develop complex Forms
+    - More logic is in the component class - less logic in the HTML markup.
+    -USE IF: 
+        Your forms are complex 
+        Your forms use multiple dynamic components
+        Your forms have advanced validation requirements
+        Your forms have dependent form elements
+
+    -EX: Checkout Order Form
+
+-----------------------------------------------------------------------
+Tutorial #35: Template-Driven Forms
+-----------------------------------------------------------------------
+
+1. These forms are tracked automatically
+
+2. Uses Two-Way Data Binding 
+
+3. Most of the code is in the HTML/Template file -- NOT the Component class
+
+4. Tracked form data traverses via various states (such as pristine, dirty, etc)
+
+5. Unit testing is more difficult with this
+
+6. Two variables unique to Template-Driven Forms:
+
+    A. ngForm (form name as a template variable - ex: #templateName)
+            <form #signInForm="ngForm" (ngSubmit)="loginUser(signInForm)"> // This says on submit we call the loginUser method and pass the form name into it
+
+    B. ngModel (every form field should have a name attribute & ngModel attached to it)
+        EX: 
+          <input type="email" name="emailAddress" ngModel>
+
+7. Remember to ALWAYS import FormsModule in app.module FIRST. 
+    -After doing this, we create the form in app.component.html, for example.
+        -Use ngForm and ngModel (see #6 for definitions and example code)
+
+-----------------------------------------------------------------------
+Tutorial #36: Template-Driven Forms - Validation
+-----------------------------------------------------------------------
+
+1. Angular provides validators such as minLength, maxLength, and required.
+
+2. Angular maintains state information of the Forms at all times. 
+    -Examples of such states are:
+        A. ng-touched
+        B. ng-untouched
+        C. ng-dirty
+        D. ng-pristine
+        E. ng-valid
+        F. ng-invalid 
+
+3. Ways to Handle Validation in Template-Driven Forms:
+    A. Highlight the errors 
+        -Ex: 
+            input.ng-invalid.ng-touched {
+                background-color: red;
+            }
+
+    B. Disable the Submit button
+        -This is done by adding the following:
+            [disabled]="!formName.valid"
+
+    C. Custom Field Level Validation - Show/Hide Error Messages
+        -Ex:
+            <span *ngIf="firstname.touched && !firstname.valid">Please enter your email.</span>
+
+-----------------------------------------------------------------------
+Tutorial #37:  Reactive Forms
+-----------------------------------------------------------------------
+
+1. All form elements, user interactions, and validations are handled in the component class
+
+2. We use formGroup & formControl
+
+3. Reactive Forms allow for better data binding
+
+4. We can define custom regular-expression patterns for error handling
+
+5. FIRST STEP IS IMPORTING ReactiveFormsModule INTO app.module.ts
+
+6. Angular maintains state information of the Reactive Forms at all times
+    A. ng-touched
+    B. ng-untouched
+    C. ng-dirty
+    D. ng-pristine
+    E. ng-valid
+    F. ng-invalid
+
+Because Reactive Forms can be more complex, we are going to follow 5 Steps:
+
+    STEP 1: Import ReactiveFormsModule into app.module.ts
+
+    STEP 2: Create the form in your component.html file
+        -FormGroup (directive for the entire form)
+        -formControlName (every form field should have a "formControlName" attribute)
+
+        -EX: 
+            <form [formGroup]="registerForm" (ngSubmit)="postData()">
+                <input type="text" formControlName="fname">    
+                <input type="text" formControlName="email">    
+                <input type="submit" value="Post Data" [disabled]="!registerForm.valid">    
+            </form>
+
+    STEP 3: In the component class, import the FormBuilder, FormGroup, FormControl NgForm, and validators
+
+    STEP 4: Inject the FormBuilder in the constructor in the component class    
+       
+        EX: 
+            constructor (private formBuilder: FormBuilder ) {}
+
+    STEP 5: Create the form instance
+
+        EX: 
+            this.registerForm = formBuilder.group({
+                fname: new FormControl(),
+                lname: new FormControl()
+            });
