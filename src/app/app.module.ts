@@ -29,6 +29,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { SigninComponent } from './signin/signin.component';
 import { CheckoutReactiveFormComponent } from './checkout-reactive-form/checkout-reactive-form.component';
+import { SecondReactiveFormComponent } from './second-reactive-form/second-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { CheckoutReactiveFormComponent } from './checkout-reactive-form/checkout
     AdminHomeComponent,
     SigninComponent,
     CheckoutReactiveFormComponent,
+    SecondReactiveFormComponent,
   ],
   imports: [
     AppRoutingModule,

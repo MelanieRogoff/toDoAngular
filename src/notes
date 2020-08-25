@@ -1029,3 +1029,58 @@ Tutorial #40:  Reactive Forms -- Set Values
             fname: 'New',
             email: 'another@gmail.com'
         })
+
+-----------------------------------------------------------------------
+Tutorial #41:  Reactive Forms -- Reset Forms
+-----------------------------------------------------------------------
+
+1. Must reset our forms to avoid duplicate values from being added
+
+2. We can reset the entire form by using reset()
+    Syntax:
+        this.registerForm.reset()
+
+-----------------------------------------------------------------------
+Tutorial #42:  Reactive Forms -- valueChanges
+-----------------------------------------------------------------------
+
+1. valueChanges is an important property of FormControl, FormGroup, and FormArray.
+
+2. valueChanges RETURNS an Observable
+
+3. We need to SUBSCRIBE to that Observable in order to read the value. 
+
+4. valueChanges is a property in AbstractControl
+
+5. valueChanges emits an event everytime there's a change in the value of the controls
+
+6. Two Approaches for valueChanges:
+
+    A. For Form Controls (on an individual Form Control)
+        -When subscribed to the observable, we will get the LATEST changed value
+        -Syntax:
+            this.formName.get('email').valueChanges.subscribe(data => {
+                console.log(data);
+            })
+
+    B. For ENTIRE Form
+        -When subscribed to the observable - we get the ENTIRE FORM, BUT the values will ONLY be for the changed Form Control
+
+        -Syntax:
+            this.formName.valueChanges.subscribe(data => {
+                console.log(data);
+            })
+
+-----------------------------------------------------------------------
+Tutorial #43:  Reactive Forms -- statusChanges
+-----------------------------------------------------------------------
+
+1. statusChanges is an important property of FormControl, FormGroup, and FormArray.
+
+2. statusChanges RETURNS an Observable
+
+3. We need to SUBSCRIBE to that Observable in order to read the value. 
+
+4. statusChanges is a property in AbstractControl
+
+5. statusChanges emits an event everytime there's a change in the VALIDATION STATUS OF THE CHANGED CONTROLS

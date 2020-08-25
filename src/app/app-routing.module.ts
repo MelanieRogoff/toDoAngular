@@ -19,12 +19,14 @@ import { NgStyleAndNgClassTutorialComponent } from './ng-style-and-ng-class-tuto
 import { NgForTutorialComponent } from './ng-for-tutorial/ng-for-tutorial.component';
 import { SwitchCaseTutorialComponent } from './switch-case-tutorial/switch-case-tutorial.component';
 import { CheckoutReactiveFormComponent } from './checkout-reactive-form/checkout-reactive-form.component';
+import { SecondReactiveFormComponent } from './second-reactive-form/second-reactive-form.component';
 
 const routes: Routes = [ //DON'T PUT '/' IN THE PATH
 //telling the default page to redirect to products route
   //Let's say that when the path is admin, use AdminHomeComponent. It can ONLY activate based on info in our AdminGuard. Essentially, whenever the AdminGuardGuard resolves to TRUE, let the user access the admin path and display the AdminHomeComponent. When it's false, DO NOT LET THE USER VIEW THIS DATA. 
   { path: '', redirectTo: 'products', pathMatch: 'full' }, 
   { path: 'signin', component: SigninComponent },
+  { path: 'second', component: SecondReactiveFormComponent },
   { path: 'pipes', component: PipesTutorialComponent },
   { path: 'checkout', component: CheckoutReactiveFormComponent },
   { path: 'custompipes', component: CustomPipeExampleComponent },
