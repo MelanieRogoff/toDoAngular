@@ -968,3 +968,64 @@ Because Reactive Forms can be more complex, we are going to follow 5 Steps:
                 fname: new FormControl(),
                 lname: new FormControl()
             });
+-----------------------------------------------------------------------
+Tutorial #38:  Reactive Forms -- Validations
+-----------------------------------------------------------------------
+
+1. Angular provides validators such as minLength, maxLength, and required.
+
+2.  Ways to Handle Validation in Responsive Forms:
+    A. Highlight the errors 
+        -Ex: 
+            input.ng-invalid.ng-touched {
+                background-color: red;
+            }
+
+    B. Disable the Submit button
+        -This is done by adding the following:
+            [disabled]="!formName.valid"
+
+    C. Custom Field Level Validation - Show/Hide Error Messages
+        -Ex:
+            <span *ngIf="firstname.touched && !firstname.valid">Please enter your email.</span>
+
+-----------------------------------------------------------------------
+Tutorial #39:  Reactive Forms -- Get Values
+-----------------------------------------------------------------------
+
+1. We can get values of a form field/control from the form
+
+2. Syntax for reading the value of the entire form:
+
+    this.formName.value
+
+3. Syntax for reading the value of an INDIVIDUAL form control:
+
+    this.formName.get('fieldName').value
+
+-----------------------------------------------------------------------
+Tutorial #40:  Reactive Forms -- Set Values
+-----------------------------------------------------------------------
+
+1. We set the values of the entire form by using setValue().
+
+2. We need to set values for every field of the form.
+
+3. We CANNOT omit any field in the form.
+
+4. Syntax for setValue(): 
+
+    this.registerForm.setValue({
+        fname: 'Me',
+        lname: 'Hello',
+        email: 'email@gmail.com'
+    });
+
+5. We set INIDIVUDAL field values by using patchValue()
+
+6. Syntax for patchValue():
+
+        this.registerForm.patchValue({
+            fname: 'New',
+            email: 'another@gmail.com'
+        })
