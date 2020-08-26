@@ -30,6 +30,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { SigninComponent } from './signin/signin.component';
 import { CheckoutReactiveFormComponent } from './checkout-reactive-form/checkout-reactive-form.component';
 import { SecondReactiveFormComponent } from './second-reactive-form/second-reactive-form.component';
+import { FormArrayComponent } from './form-array/form-array.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { SecondReactiveFormComponent } from './second-reactive-form/second-react
     SigninComponent,
     CheckoutReactiveFormComponent,
     SecondReactiveFormComponent,
+    FormArrayComponent,
   ],
   imports: [
     AppRoutingModule,

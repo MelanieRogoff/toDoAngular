@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-second-reactive-form',
@@ -13,7 +14,6 @@ export class SecondReactiveFormComponent implements OnInit {
 
   valueChangedTracked = '';
 
-
   constructor(private formBuilder: FormBuilder) { 
     this.checkoutForm = formBuilder.group({
       emailAddr: ['', [
@@ -22,7 +22,7 @@ export class SecondReactiveFormComponent implements OnInit {
                 Validators.email]],
       quantity: ['', Validators.required],
       terms: ['', Validators.requiredTrue]
-    })
+    });
   }
 
   ngOnInit(): void {
@@ -30,16 +30,25 @@ export class SecondReactiveFormComponent implements OnInit {
       this.valueChangedTracked = data;  //this allows us to see every change we make in the email input field 
     })
 
+  //To capture the statusChanges of the emailAddr FormControl, do:
+    this.checkoutForm.get('emailAddr').statusChanges.subscribe(data => {
+      console.log(data, 'data');
+    })
+
+  //To capture the statusChanges of the entire Form, do:
+    this.checkoutForm.statusChanges.subscribe(data => {
+      console.log(data, 'entire form statusChanges');
+    })
+
     //To read the entire form valueChange, do:
-    // this.checkoutForm.valueChanges.subscribe(data => {
-    //   console.log(data, 'formData');
-    // })
+    this.checkoutForm.valueChanges.subscribe(data => {
+      console.log(data, 'formData');
+    })
   }
 
   get items() {
     return this.checkoutForm.get('items') as FormArray;
   }
-
 
   addItemRow() {
     const newGroup = this.formBuilder.group({

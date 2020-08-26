@@ -1084,3 +1084,89 @@ Tutorial #43:  Reactive Forms -- statusChanges
 4. statusChanges is a property in AbstractControl
 
 5. statusChanges emits an event everytime there's a change in the VALIDATION STATUS OF THE CHANGED CONTROLS
+
+6. Multiple Approaches for statusChanges:
+    
+    A. For Form Controls
+        -When subscribed to the Observable, WE GET THE VALIDATION STATUS OF THE CONTROLS
+        -Syntax:
+            this.formName.get('fname').statusChanges.subscribe(data => {
+                console.log(data);
+            })
+
+    B. For the Entire Form
+        -When subscribed to the Observable, we GET THE VALIDATION STATUS OF THE ENTIRE FORM
+        -Syntax:
+            this.formName.statusChanges.subscribe(data => {
+                console.log(data);
+            })
+
+-----------------------------------------------------------------------
+Tutorial #44:  Reactive Forms -- Form Array
+-----------------------------------------------------------------------
+
+1. Form Arrays are needed for complex forms. 
+
+2. Form Arrays allow us to easily remove and add elements. 
+
+3. Form Array tracks the value & validity state of an array of FormCtrols, Form Arrays and FormGroup
+
+4. Form Array aggregates the values of the "child" FormControl into an array
+
+5. The status of the FormArray is calculated by reducing the statuses of its children.
+
+6. If one of the controls are invalid, the ENTIRE array will be invalid.
+
+7. A Form Array can be an array of FormGroups, of FormGroups, or both.
+    -In other words, for a Form Array to be valid, ALL of the FormControls/FormGroups/etc IN the array must be valid
+
+8. Use Cases for Form Arrays:
+
+    A. Creating a Form w/simple array items
+        -EX: 
+            this.checkoutForm = formBuilder.group({
+                items: this.formBuilder.array([
+                    new FormControl('HI'),
+                    new FormControl('HELLO'),
+                    new FormControl('LEARNING'),
+                    new FormControl('CODING')
+                ])
+            });
+
+        In the Template (HTML) file, we would then LOOP through the values & display them:
+            <div class="col-sm-10" formArrayName="items">
+                <div *ngFor="let control of checkoutForm.controls.items['controls']; let i=index;">
+                    <input type="text" [formControlName]="i" id="learn{{i}}">
+                </div>
+            </div>
+
+
+    B. Getting the properties and methods of the array
+        -EX: 
+            console.log(myArr.value);
+            console.log(myArr.status);
+            console.log(myArr.length);
+            console.log(arr.setValue(['name', 'last name']));
+            console.log(arr.patchValue(['name', 'last name']));
+            console.log(arr.reset(['name', 'last name']));
+            console.log(myArr.clear());
+
+    C. Reactive Form with array items and other FormControls
+        -EX: 
+            this.checkoutForm = formBuilder.group({
+                emailAddr: ['', [Validators.minLength(5), Validators.maxLength(10), Validators.required, Validators.email],
+                quantity: ['', Validators.required],
+                terms: ['', Validators.requiredTrue],
+                items: this.formBuilder.array([
+                    new FormControl('HI'),
+                    new FormControl('HELLO'),
+                    new FormControl('LEARNING'),
+                    new FormControl('CODING')
+                ])
+            })
+
+-----------------------------------------------------------------------
+Tutorial #45:  Reactive Forms -- Nested Form Array
+-----------------------------------------------------------------------
+
+1. 
