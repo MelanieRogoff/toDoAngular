@@ -31,6 +31,9 @@ import { SigninComponent } from './signin/signin.component';
 import { CheckoutReactiveFormComponent } from './checkout-reactive-form/checkout-reactive-form.component';
 import { SecondReactiveFormComponent } from './second-reactive-form/second-reactive-form.component';
 import { FormArrayComponent } from './form-array/form-array.component';
+import { RemoveRowReactiveFormComponent } from './remove-row-reactive-form/remove-row-reactive-form.component';
+import { ObservableComponent } from './observable/observable.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,9 @@ import { FormArrayComponent } from './form-array/form-array.component';
     CheckoutReactiveFormComponent,
     SecondReactiveFormComponent,
     FormArrayComponent,
+    RemoveRowReactiveFormComponent,
+    ObservableComponent,
+    ContactsComponent,
   ],
   imports: [
     AppRoutingModule,

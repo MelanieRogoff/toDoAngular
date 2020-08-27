@@ -1,0 +1,21 @@
+<br><br><h4>List of Contacts</h4>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Hobbies</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contactList; let i = index;"> 
+           
+            <td> {{ contact.contactName }}</td>
+            <td>{{ contact.contactId }}</td>
+            <td>{{ contact.hobbies }}</td>
+
+        </tr>
+    </tbody>
+</table>

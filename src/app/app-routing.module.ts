@@ -21,13 +21,19 @@ import { SwitchCaseTutorialComponent } from './switch-case-tutorial/switch-case-
 import { CheckoutReactiveFormComponent } from './checkout-reactive-form/checkout-reactive-form.component';
 import { SecondReactiveFormComponent } from './second-reactive-form/second-reactive-form.component';
 import { FormArrayComponent } from './form-array/form-array.component';
+import { RemoveRowReactiveFormComponent } from './remove-row-reactive-form/remove-row-reactive-form.component';
+import { ObservableComponent } from './observable/observable.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [ //DON'T PUT '/' IN THE PATH
 //telling the default page to redirect to products route
   //Let's say that when the path is admin, use AdminHomeComponent. It can ONLY activate based on info in our AdminGuard. Essentially, whenever the AdminGuardGuard resolves to TRUE, let the user access the admin path and display the AdminHomeComponent. When it's false, DO NOT LET THE USER VIEW THIS DATA. 
   { path: '', redirectTo: 'products', pathMatch: 'full' }, 
   { path: 'signin', component: SigninComponent },
+  { path: 'contacts', component: ContactsComponent },
   { path: 'form', component: FormArrayComponent },
+  { path: 'remove', component: RemoveRowReactiveFormComponent },
+  { path: 'observable', component: ObservableComponent },
   { path: 'second', component: SecondReactiveFormComponent },
   { path: 'pipes', component: PipesTutorialComponent },
   { path: 'checkout', component: CheckoutReactiveFormComponent },

@@ -1169,4 +1169,161 @@ Tutorial #44:  Reactive Forms -- Form Array
 Tutorial #45:  Reactive Forms -- Nested Form Array
 -----------------------------------------------------------------------
 
-1. 
+1. Whatever you can do with a regular array, you can do with a Form Array.
+
+-----------------------------------------------------------------------
+Tutorial #46:  Reactive Forms -- Adding Rows Dynamically
+-----------------------------------------------------------------------
+
+1. We essentially add new rows dynamically by appending/pushing more FormGroups or FormControls to a Form Array.
+
+-----------------------------------------------------------------------
+Tutorial #47:  Reactive Forms -- Removing Rows Dynamically
+-----------------------------------------------------------------------
+
+1. In order to remove rows dynamically, we must:
+
+    -Capture the index of the row that we want to remove from the array
+        -Using the indexAt method, we can point to the item we want removed from the Form Array
+
+2. Example of how the TS & Template would look:
+
+    TS:
+        removeItem(index) {
+            const arr = this.items.length;
+            this.items.removeAt(index);
+        }
+
+    Template(HTML):
+        <a (click)="removeItem()">Remove a row
+
+-----------------------------------------------------------------------
+Tutorial #48:  Angular HTTP - Observables
+-----------------------------------------------------------------------
+
+1. What are Observables?
+
+    -They are a sequence of data emitted asynchronously (most of the time) over a period of time
+
+    -Observables are part of the RxJS library
+
+    -We import Observable into our component when using it
+
+    -Angular uses Observables as an interface to handle various common asynchronous operations (such as HTTP, Routing, Event Handling)
+
+    -Observables are the recommended technique for event handling, asynchronous programming, and handling multiple values
+
+    -Observables can deliver multiple values of ANY TYPE - literals, strings, or events, depending on the context
+
+2. What is an Observer? 
+
+    -When we create an Observable, we keep track of it by using an Observer
+
+    -Observers continuously listen to Observables
+
+    -We control when to start and end listening to an Observable by using an Observer
+
+    -Observer has 3 methods we can use:
+        A: next()
+        B: error()
+        C: complete()
+
+3. What is Subscription? What is Subscribe?
+
+    -Essentially, it's how we process the data from an Observable.
+
+    -In other words, we must ALWAYS subscribe to an Observable to get/process the data.
+
+    -We can have multiple subscribers for any given Observable.
+
+    -We can also UNSUBSCRIBE from a Subscriber.
+
+-----------------------------------------------------------------------
+Tutorial #49:  Angular HTTP - Dependency Injection (DI)
+-----------------------------------------------------------------------
+
+1. Dependency Injection is the ability to add the functionality of components at runtime
+
+2. We can supply data to a component from an injectable SERVICE class, defined in its own file
+
+3. Dependencies are SERVICES OR OBJECTS that a class needs to perform its function
+
+4. DI is a coding pattern in which a class/component asks for dependencies from external sources instead of creating them itself. 
+
+5. Dependency Injections are just services.
+
+6. Services are resusable classes that can be shared between components.
+
+7. We use a decorator called @Injectable to let components know that it is a Dependency
+
+-----------------------------------------------------------------------
+Tutorial #50:  Angular HTTP - Services
+-----------------------------------------------------------------------
+
+1. Services let us create reusable common shared functionality between various modules and components.
+
+2. Services are singleton, meaning that they are injected in a particular component that requires them
+
+3. Services are injected by using Dependency Injection
+
+4. Must create & inject services in components where we want to use them
+
+5. Services are commonly used for making HTTP requests to our endpoints APIs in order to request and receive a response. 
+
+6. Services can have a value, a method, or a combination of both.
+
+7. If an app had 3 modules, they could, for example, share a service. 
+
+8. Example of a service:
+    contacts.service has what is required for HTTP, processing data, and cleaning data, which will be used in all the components related to creating, viewing, editing, and deleting a contact
+
+9. We don't need to include services in our modules
+
+10. We can create a limitless number of services
+
+11. Importing & injecting services into components is called Dependency Injection
+
+12. Create a service by doing: 
+        ng g service service-name
+
+    We then write @Injectable in the file
+
+13. Services are provided in the "root", meaning that it is available across the application and can be injected into any component
+
+14. @Injectable:
+
+    -A class that has the @Injectable decorator becomes a SERVICE class
+
+    -@Injectable decorator allows the functionality of said class to be injected and used in any Angular module
+
+15. Recap with using Services (4 Steps):
+
+        Step 1: Generate the Service (ng g service service-name)
+
+        Step 2: Import the Service into a component class 
+            EX: 
+                Import { service-name } from '../service-name.service';
+
+        Step 3: Initialize the Service in the constructor via DI
+            EX:
+                constructor(private serviceName: ServiceNameService) {}
+
+        Step 4: Call the methods/properties from the Service whilst in the component class
+            EX: 
+                this.serviceName.methodName();
+
+16. Can call the service method directly from the template (HTML)
+    Ex: 
+        <button (click)="serviceName.serviceMethod();"></button>
+
+-----------------------------------------------------------------------
+Tutorial #50:  Angular HTTP - HttpClient
+-----------------------------------------------------------------------
+
+1. HttpClient is used for performing HTTP requests and responses. 
+
+2. We can obtain HttpClient via '@angular/common/http'.
+
+3. HttpClientModule MUST be imported into the module (most of the time, it's imported into app.module)
+
+4. HttpClient can provide us with other useful functionality, such as intercepters and headers. 

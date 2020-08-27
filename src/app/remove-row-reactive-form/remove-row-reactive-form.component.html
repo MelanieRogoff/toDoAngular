@@ -24,8 +24,7 @@
         <label for="inputPassword3" class="col-sm-2 col-form-label">Items</label>
         <div class="col-sm-10" formArrayName="items">
             <div *ngFor="let item of checkoutForm.controls.items['controls']; let i=index" [formGroupName]="i">
-                <!-- <a [routerLink] (click)="removeItem(i)">Remove</a> -->
-                <!-- task is an arbitrary name -->
+                <a [routerLink] (click)="removeItem(i)">Remove a Row</a>
                 <input class="form-control" type="text" formControlName="itemId" id="task{{i}}">
                 <input class="form-control" type="text" formControlName="itemName" id="task{{i}}">
                 <input class="form-control" type="text" formControlName="itemDescription" id="task{{i}}">
