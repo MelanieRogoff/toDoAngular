@@ -1327,3 +1327,82 @@ Tutorial #50:  Angular HTTP - HttpClient
 3. HttpClientModule MUST be imported into the module (most of the time, it's imported into app.module)
 
 4. HttpClient can provide us with other useful functionality, such as intercepters and headers. 
+
+5. HttpClient Methods:
+
+    - get();
+    - post();
+    - put();
+    - delete();
+    - head();
+    - jsonp();
+    - options();
+    - patch();
+
+6. HttpClient Includes:
+
+    -Observable APIs (this means the HTTP req/res types are of type Observable)
+    -Can have HTTP Headers in options
+    -High testability features (makes testing easier)
+    -Typed request (we can give the requests a type)
+    -Response objects
+    -Request and response interception
+    -Error handling
+
+7. CRUD Operations Using HttpClient:
+
+    -Create (POST)
+    -Read (GET)
+    -Update(PUT)
+    -Delete(DELETE) -- technically, we should NEVER delete anything. Only soft delets, which means setting a flag.
+
+8. Now, let's set up our server!
+
+    -For our tutorial, we are doing:
+        npm i -g json-server
+
+9. To work w/json-server, we need a mock data file.
+
+    -Create `db.json` and enter info
+
+    -In order to watch the data, do:
+        json-server --watch db.json
+
+-----------------------------------------------------------------------
+Tutorial #51:  Angular HTTP - GET Method
+-----------------------------------------------------------------------
+
+1. GET = making API calls to retrieve data
+
+2. To make a call, we need an endpoint or an API URL    
+    EX:
+        get('api-endpoint')
+
+3. We can also pass various parameters as options to a GET call
+    EX: 
+        get('url', options: {});
+
+4. We will use options to pass parameters such as headers, params, responseType, and withCredentials
+    EX: 
+        get('url', options: { headers: {}, params: {} })
+
+5. The response type for a GET call is an Observable, and we MUST subscribe to it in order to read its values.
+
+6. HttpClient Methods Options:
+    A. Headers: is of type HttpHeaders
+    B. Params: is of type HttpParams
+
+7. 6 Steps for using the GET Method:
+
+    Step 1: Import HttpClientModule into app.module
+
+    Step 2: Import HttpClient in our service or component (wherever we make the HTTP request)
+        - It's good practice to have ALL HTTP calls in Services
+
+    Step 3: Inject the HttpClient in the constructor() of the class
+
+    Step 4: Implement the GET call
+
+    Step 5: Import the Services into the required calling component class
+
+    Step 6: Call the method in order to make the HTTP request

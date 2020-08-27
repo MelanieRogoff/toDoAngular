@@ -7,15 +7,16 @@ import { ContactsService } from '../contacts.service';
 })
 export class ContactsComponent implements OnInit {
 
-  constructor( private contactsService: ContactsService) {
+  constructor( private contactsService: ContactsService) {}
 
-   }
-
-   contactList = []; //setting the contactList to an empty array prior to ngOnInit()
+   contactList: any;
 
   ngOnInit(): void {
-    this.contactList = this.contactsService.getContacts(); //here we are saying to set the contactList array to have the contacts we created in our getContacts() method in our contact service. 
-    
+
+    this.contactsService.getContacts().subscribe(data => {
+      this.contactList = data;
+    });
+ //subscribing to the data we grab from our service, which grabs data from our db.json, and then we set that returned data to our contactList.
   }
 
 }

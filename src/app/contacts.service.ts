@@ -1,22 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactsService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  getContacts() {
-    //HTTP calls usually happen here
-    const contactList = [
-      { contactId: 1, contactName: 'Ava', hobbies: 'Being a CEO' },
-      { contactId: 2, contactName: 'Sara', hobbies: 'Dancing' },
-      { contactId: 3, contactName: 'Gary', hobbies: 'Soccer' },
-      { contactId: 4, contactName: 'Mick', hobbies: 'Scientific Journaling' },
-    ];
-
-    return contactList;
+  getContacts() {//HTTP calls usually happen here -- we're linking to our contacts array in db.json
+   //Headers
+    const httpHeaders = new HttpHeaders();
+    httpHeaders.append('content-type', 'application/json');
+  
+    return this.httpClient.get('http://localhost:3000/contacts');
   }
-
 }

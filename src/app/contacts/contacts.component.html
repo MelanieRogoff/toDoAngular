@@ -10,11 +10,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let contact of contactList; let i = index;"> 
+        <tr *ngFor="let contacts of contactList"> 
            
-            <td> {{ contact.contactName }}</td>
-            <td>{{ contact.contactId }}</td>
-            <td>{{ contact.hobbies }}</td>
+            <td> {{ contacts.contactName }}</td>
+            <td>{{ contacts.contactId }}</td>
+            <td>{{ contacts.hobbies }}</td>
 
         </tr>
     </tbody>

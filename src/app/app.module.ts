@@ -34,6 +34,7 @@ import { FormArrayComponent } from './form-array/form-array.component';
 import { RemoveRowReactiveFormComponent } from './remove-row-reactive-form/remove-row-reactive-form.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     BrowserModule,
     FormsModule,
     TodoModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     {
