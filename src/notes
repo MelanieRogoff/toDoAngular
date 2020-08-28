@@ -1406,3 +1406,11 @@ Tutorial #51:  Angular HTTP - GET Method
     Step 5: Import the Services into the required calling component class
 
     Step 6: Call the method in order to make the HTTP request
+
+-----------------------------------------------------------------------
+Tutorial #52:  Angular HTTP - POST Method
+-----------------------------------------------------------------------
+
+1. POST = making API calls to submit the data
+
+2. To make a POST call, 
